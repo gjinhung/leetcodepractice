@@ -2,8 +2,8 @@ let problem3 = function (s) {
     let res = 0
     let dict = {}
     let count = 0
-    for (let i = 0; i < s.length; i++) {
-        let letter = s[i]
+    for (let end = 0; end < s.length; end++) {
+        let letter = s[end]
         if (dict[letter]) {
             if (count > res) {
                 res = count
