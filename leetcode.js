@@ -1,28 +1,21 @@
+
 let problem3 = function (s) {
-    let res = 0
     let dict = {}
     let count = 0
-    for (let end = 0; end < s.length; end++) {
-        let letter = s[end]
-        if (dict[letter]) {
-            if (count > res) {
-                res = count
-            }
-            dict = {}
-            dict[letter] = 1
-            count = 1
-            console.log('letter exists')
-        } else {
-            count++
-            console.log(count)
-            dict[letter] = 1
-            if (count > res) {
-                res = count
-            }
-            console.log('letter does not exists')
+    let left = 0; right = 0;
+    for (; right < s.length; right++) {
+        let letter = s[right]
+        if (dict[letter] >= left) { //if the letter position 
+            left = dict[letter] + 1
         }
+        (dict[letter] = right)
+
+        count = Math.max(right - left + 1, count)
+        console.log(dict)
+        console.log(letter)
+        console.log(`left = ${left} right = ${right} count = ${count}`)
     }
-    return res
+    return count
 }
 
-console.log(problem3('dvdf'))
+console.log(problem3('abcabcbb'))
