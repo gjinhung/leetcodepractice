@@ -11,9 +11,6 @@ let problem3 = function (s) {
         (dict[letter] = right)
 
         count = Math.max(right - left + 1, count)
-        console.log(dict)
-        console.log(letter)
-        console.log(`left = ${left} right = ${right} count = ${count}`)
     }
     return count
 }
