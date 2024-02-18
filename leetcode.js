@@ -18,5 +18,6 @@ let problem3 = function (s) {
 console.log(problem3('abcabcbb'))
 
 let problem4 = function (s) {
-    let dict = {}
 }
+
+console.log(problem4('123'))
