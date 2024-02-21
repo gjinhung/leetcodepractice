@@ -17,9 +17,18 @@ let problem3 = function (s) {
 
 console.log(problem3('abcabcbb'))
 
-let problem4 = function (s) {
-    let count
-    return (count)
+let problem5 = function (s) {
+    let res
+
+    for (let i = 0; i < s.length; i++) {
+        let left = i; right = i + 1
+        let letter = s[i]
+        let nextLetter = s[i + 1]
+        if (letter === nextLetter) {
+
+        }
+
+    }
 }
 
-console.log(problem4('123'))
+console.log(problem5('abba'))
