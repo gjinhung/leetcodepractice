@@ -15,7 +15,7 @@ let problem3 = function (s) {
     return count
 }
 
-console.log(problem3('abcabcbb'))
+// console.log(problem3('abcabcbb'))
 
 let problem5 = function (s) {
     let res
@@ -31,4 +31,24 @@ let problem5 = function (s) {
     }
 }
 
-console.log(problem5('abba'))
+// console.log(problem5('abba'))
+
+let isPalindrome = function (x) {
+    x = x.toString()
+    let res = true
+    let mid = (x.length - 1) / 2
+    for (let i = 0; i < mid; i++) {
+        let left = x[i]
+        let right = x[x.length - 1 - i]
+
+        console.log(`${left} = ${right}`)
+        if (left != right) {
+            return false
+        }
+    }
+    return res
+
+
+};
+
+// console.log(isPalindrome(1221))
