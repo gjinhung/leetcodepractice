@@ -82,4 +82,34 @@ let romanToInt = function (s) {
     return res
 }
 
-console.log(romanToInt('MCMXCIV'))
+// console.log(romanToInt('MCMXCIV'))
+
+let longestCommonPrefix = function (strs) {
+    let res = ''
+    let count = 0
+    let firstWord = strs[0]
+    let left = 0
+    for (let i = 0; i <= firstWord.length; i++) {
+        let con = true
+        let letters = firstWord.slice(left, i)
+        strs.forEach(word => {
+            let newLetters = word.slice(left, i)
+            if (newLetters !== letters) {
+                con = false
+            }
+        });
+        if (con === false) {
+            // left++
+            // i--
+            return res
+        } else {
+            if ((i - left) > count) {
+                count = i - left
+                res = letters
+            }
+        }
+    }
+    return res
+}
+
+console.log(longestCommonPrefix(["a"]))
