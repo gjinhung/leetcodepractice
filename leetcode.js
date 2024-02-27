@@ -112,4 +112,36 @@ let longestCommonPrefix = function (strs) {
     return res
 }
 
-console.log(longestCommonPrefix(["a"]))
+// console.log(longestCommonPrefix(["a"]))
+
+let isValid = function (s) {
+    const pairs = {
+        ")": "(",
+        "}": "{",
+        "]": "["
+    }
+
+    let stack = []
+
+    if (s.length % 2 === 1) {
+        return false
+    }
+
+    for (let i = 0; i < s.length; i++) {
+        let x = s[i]
+        if (!pairs[x]) {
+            stack.push(x)
+        } else if (pairs[x]) {
+            if (pairs[x] != stack[stack.length - 1]) {
+                return false
+            } else {
+                stack.pop()
+            }
+        }
+
+    }
+
+    return (!stack.length > 0)
+};
+
+console.log(isValid("{[]}"))
