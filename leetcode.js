@@ -158,4 +158,19 @@ let removeDuplicates = function (nums) {
     return index
 };
 
-console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]))
+// console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]))
+
+
+var removeElement = function (nums, val) {
+    let index = 0
+    for (let i = 0; i < nums.length; i++) {
+        let int = nums[i]
+        if (int != val) {
+            nums[index] = int
+            index++
+        }
+    }
+    return index
+};
+
+console.log(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2))
