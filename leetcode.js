@@ -173,4 +173,20 @@ var removeElement = function (nums, val) {
     return index
 };
 
-console.log(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2))
+// console.log(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2))
+
+var strStr = function (haystack, needle) {
+    let index = -1
+    for (let i = 0; i <= haystack.length - needle.length; i++) {
+        let letter = haystack[i]
+        if (letter === needle[0]) {
+            let word = haystack.slice(i, i + needle.length)
+            if (word === needle) {
+                return i
+            }
+        }
+    }
+    return index
+};
+
+// console.log(strStr("leetcode", "leeto"))
