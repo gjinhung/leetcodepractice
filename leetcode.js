@@ -190,3 +190,35 @@ var strStr = function (haystack, needle) {
 };
 
 // console.log(strStr("leetcode", "leeto"))
+
+let mergeTwoLists = function (list1, list2) {
+    let l1Idx = 0;
+    let l2Idx = 0;
+    let res = []
+    for (let i = 1; i <= list1.length + list2.length; i++) {
+        if (list1[l1Idx] <= list2[l2Idx]) {
+            res.push(list1[l1Idx])
+            l1Idx++
+        } else {
+            res.push(list2[l2Idx])
+            l2Idx++
+        }
+    }
+    return res
+}
+
+// console.log(mergeTwoLists([], []))
+
+let searchInsert = function (nums, target) {
+    for (let i = 0; i < nums.length; i++) {
+        let num = nums[i]
+        let next = nums[i + 1]
+        if (target <= num) {
+            return i
+        }
+        if (target > num && target < next) {
+            return i + 1
+        }
+    }
+    return nums.length
+};
