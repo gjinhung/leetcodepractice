@@ -222,3 +222,15 @@ let searchInsert = function (nums, target) {
     }
     return nums.length
 };
+
+let lengthOfLastWord = function (s) {
+    let sArr = s.split(" ")
+    for (let i = sArr.length - 1; i >= 0; i--) {
+        let str = sArr[i]
+        if (str) {
+            return str.length
+        }
+    }
+}
+
+console.log(lengthOfLastWord("   fly me   to   the moon  "))
