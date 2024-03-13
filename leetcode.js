@@ -233,4 +233,22 @@ let lengthOfLastWord = function (s) {
     }
 }
 
-console.log(lengthOfLastWord("   fly me   to   the moon  "))
+// console.log(lengthOfLastWord("   fly me   to   the moon  "))
+
+let plusOne = function (digits) {
+    let multiplier = digits.length - 1
+    let number = 0
+    for (let i = 0; i < digits.length; i++) {
+        let num = digits[i]
+        console.log((10 ** multiplier) * num)
+        number = number + (10 ** multiplier) * num
+        multiplier--
+
+    }
+
+
+
+    return number
+};
+
+console.log(plusOne([6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 3]))
