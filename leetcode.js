@@ -240,7 +240,6 @@ let plusOne = function (digits) {
     let number = 0
     for (let i = 0; i < digits.length; i++) {
         let num = digits[i]
-        console.log((10 ** multiplier) * num)
         number = number + (10 ** multiplier) * num
         multiplier--
 
@@ -251,4 +250,29 @@ let plusOne = function (digits) {
     return number
 };
 
-console.log(plusOne([6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 3]))
+// console.log(plusOne([6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 3]))
+
+
+let addBinary = function (a, b) {
+    let binaryDec = function (x) {
+        let multiple = 0;
+        let num = 0;
+        for (let i = x.length - 1; i >= 0; i--) {
+            let number = x[i]
+            if (+number) {
+                num = num + (2 ** multiple)
+                multiple++
+            } else {
+                multiple++
+            }
+
+        }
+        return +num
+    }
+
+    let sum = binaryDec(a) + binaryDec(b)
+
+    return (sum.toString(2))
+};
+
+console.log(addBinary("11", "1"))
