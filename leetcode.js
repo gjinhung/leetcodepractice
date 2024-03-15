@@ -275,4 +275,20 @@ let addBinary = function (a, b) {
     return (sum.toString(2))
 };
 
-console.log(addBinary("11", "1"))
+// console.log(addBinary("11", "1"))
+
+let climbStairs = function (n) {
+    debugger
+    let res = 0
+    if (!n || n === 1) {
+        return 1
+    }
+    if (n > 1) {
+        let left = climbStairs(n - 1)
+        let right = climbStairs(n - 2)
+        res = left + right
+        return res
+    }
+}
+
+console.log(climbStairs(10))
