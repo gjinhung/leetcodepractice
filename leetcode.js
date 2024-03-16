@@ -291,4 +291,17 @@ let climbStairs = function (n) {
     }
 }
 
-console.log(climbStairs(10))
+// console.log(climbStairs(10))
+
+let deleteDuplicates = function (head) {
+    let arr = []
+    for (let i = 0; i < head.length; i++) {
+        let num = head[i]
+        if (!arr.includes(num)) {
+            arr.push(num)
+        }
+    }
+    return arr.sort((a, b) => a - b)
+}
+
+console.log(deleteDuplicates([1, 2, 2, 3, 3]))
