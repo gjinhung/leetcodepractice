@@ -304,4 +304,18 @@ let deleteDuplicates = function (head) {
     return arr.sort((a, b) => a - b)
 }
 
-console.log(deleteDuplicates([1, 2, 2, 3, 3]))
+// console.log(deleteDuplicates([1, 2, 2, 3, 3]))
+
+let merge = function (nums1, m, nums2, n) {
+    let num2 = 0
+    for (let i = m; i < (m + n); i++) {
+        nums1.splice(i, 1, nums2[num2])
+        num2++
+    }
+    nums1.sort((a, b) => {
+        return a - b
+    })
+    return nums1
+};
+
+console.log(merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3))
