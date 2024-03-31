@@ -318,4 +318,30 @@ let merge = function (nums1, m, nums2, n) {
     return nums1
 };
 
-console.log(merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3))
+// console.log(merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3))
+
+var divide = function (dividend, divisor) {
+    let negative = true
+    let i = dividend
+    if (dividend > 0 && divisor > 0) {
+        negative = false
+    } else if (dividend < 0 && divisor < 0) {
+        negative = false
+    }
+
+    i = Math.abs(i)
+    divisor = Math.abs(divisor)
+    let count = 0
+    for (i; i > 0;) {
+        i = i - divisor
+        if (i >= 0) {
+            count++
+        }
+    }
+    if (negative) {
+        return -count
+    }
+    else { return count }
+};
+
+console.log(divide(-1, -1))
