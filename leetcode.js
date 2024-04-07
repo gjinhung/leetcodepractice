@@ -1,3 +1,8 @@
+function ListNode(val, next) {
+    this.val = (val === undefined ? 0 : val)
+    this.next = (next === undefined ? null : next)
+}
+
 
 let problem3 = function (s) {
     let dict = {}
@@ -320,60 +325,60 @@ let merge = function (nums1, m, nums2, n) {
 
 // console.log(merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3))
 
-var divide = function (dividend, divisor) {
-    let negative = true
-    let i = dividend
-    if (dividend > 0 && divisor > 0) {
-        negative = false
-    } else if (dividend < 0 && divisor < 0) {
-        negative = false
-    }
-    i = Math.abs(i)
-    divisor = Math.abs(divisor)
-    let count = 0
-    for (i; i > 0;) {
-        i = i - divisor
-        if (i >= 0) {
-            count++
-        }
-    }
-    if (negative) {
-        return -count
-    }
-    else { return count }
-};
+// var divide = function (dividend, divisor) {
+//     let negative = true
+//     let i = dividend
+//     if (dividend > 0 && divisor > 0) {
+//         negative = false
+//     } else if (dividend < 0 && divisor < 0) {
+//         negative = false
+//     }
+//     i = Math.abs(i)
+//     divisor = Math.abs(divisor)
+//     let count = 0
+//     for (i; i > 0;) {
+//         i = i - divisor
+//         if (i >= 0) {
+//             count++
+//         }
+//     }
+//     if (negative) {
+//         return -count
+//     }
+//     else { return count }
+// };
 
-// console.log(divide(-1, -1))
+// // console.log(divide(-1, -1))
 
 
-var addTwoNumbers = function (l1, l2) {
-    var List = new ListNode(0);
-    var head = List;
-    var sum = 0;
-    var carry = 0;
+// var addTwoNumbers = function (l1, l2) {
+//     var List = new ListNode(0);
+//     var head = List;
+//     var sum = 0;
+//     var carry = 0;
 
-    while (l1 !== null || l2 !== null || sum > 0) {
+//     while (l1 !== null || l2 !== null || sum > 0) {
 
-        if (l1 !== null) {
-            sum = sum + l1.val;
-            l1 = l1.next;
-        }
-        if (l2 !== null) {
-            sum = sum + l2.val;
-            l2 = l2.next;
-        }
-        if (sum >= 10) {
-            carry = 1;
-            sum = sum - 10;
-        }
+//         if (l1 !== null) {
+//             sum = sum + l1.val;
+//             l1 = l1.next;
+//         }
+//         if (l2 !== null) {
+//             sum = sum + l2.val;
+//             l2 = l2.next;
+//         }
+//         if (sum >= 10) {
+//             carry = 1;
+//             sum = sum - 10;
+//         }
 
-        head.next = new ListNode(sum);
-        head = head.next;
+//         head.next = new ListNode(sum);
+//         head = head.next;
 
-        sum = carry;
-        carry = 0;
+//         sum = carry;
+//         carry = 0;
 
-    }
+//     }
 
-    return List.next;
-};
+//     return List.next;
+// };
