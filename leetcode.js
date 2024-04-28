@@ -382,3 +382,17 @@ var addTwoNumbers = function (l1, l2) {
 
     return List.next;
 };
+
+function arrayDiff(a, b) {
+    let res = []
+    a.forEach(x => {
+        let idx = b.indexOf(x)
+        if (idx == -1) {
+            res.push(x)
+        }
+    })
+    return res
+}
+
+console.log(arrayDiff([1, 1, 2], [1]))
+console.log(arrayDiff([1, 2, 2, 2, 3], [2]))
