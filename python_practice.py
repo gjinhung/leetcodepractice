@@ -62,4 +62,27 @@ def recursive_countdown(n):
         return recursive_countdown(n - 1)
 
 
-recursive_countdown(5)  # > 5 4 3 2 1)
+# recursive_countdown(5)  # > 5 4 3 2 1)
+
+
+def is_prime(n, l=2):
+    if n <= 2:
+        return True if n == 2 else False
+
+    if n == l:
+        print(l)
+        return True
+
+    if n % l == 0:
+        print(l)
+        return False
+
+    return is_prime(n, l + 1)
+
+
+print(is_prime(1))  # > False
+print(is_prime(2))  # > True
+print(is_prime(3))  # > True
+print(is_prime(5))  # > True
+print(is_prime(9))  # > False
+print(is_prime(143))  # > False
