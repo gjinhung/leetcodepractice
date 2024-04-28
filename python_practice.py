@@ -47,8 +47,19 @@ def recursive_fib(n):
         return recursive_fib(n - 1) + recursive_fib(n - 2)
 
 
-print(recursive_fib(1))  # > 1
-print(recursive_fib(2))  # > 1
-print(recursive_fib(4))  # > 3
-print(recursive_fib(6))  # > 8
-print(recursive_fib(12))  # > 144
+# print(recursive_fib(1))  # > 1
+# print(recursive_fib(2))  # > 1
+# print(recursive_fib(4))  # > 3
+# print(recursive_fib(6))  # > 8
+# print(recursive_fib(12))  # > 144
+
+
+def recursive_countdown(n):
+    if n == 0:
+        return
+    else:
+        print(n)
+        return recursive_countdown(n - 1)
+
+
+recursive_countdown(5)  # > 5 4 3 2 1)
