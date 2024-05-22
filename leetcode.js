@@ -394,5 +394,21 @@ function arrayDiff(a, b) {
     return res
 }
 
-console.log(arrayDiff([1, 1, 2], [1]))
-console.log(arrayDiff([1, 2, 2, 2, 3], [2]))
+// console.log(arrayDiff([1, 1, 2], [1]))
+// console.log(arrayDiff([1, 2, 2, 2, 3], [2]))
+// 0 1 2
+
+const rps = (p1, p2) => {
+    let po = ["rock", "scissors", "paper"]
+    if (p1 === p2) {
+        return ('Draw!')
+    }
+    if (po.indexOf(p1) - po.indexOf(p2) === 1 || po.indexOf(p1) - po.indexOf(p2) === -2) {
+        return ("Player 2 won!")
+    } else {
+        return ("Player 1 won!")
+    }
+};
+
+console.log(rps('scissors', 'paper'))
+console.log(rps('rock', 'rock'))
