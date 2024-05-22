@@ -86,3 +86,18 @@ def is_prime(n, l=2):
 # print(is_prime(5))  # > True
 # print(is_prime(9))  # > False
 # print(is_prime(143))  # > False
+
+
+def count_by(x, n):
+    list = []
+    i = 1
+
+    while i <= n:
+        list.append(x * i)
+        i = i + 1
+
+    return list
+
+
+print(count_by(1, 10))
+print(count_by(2, 5))

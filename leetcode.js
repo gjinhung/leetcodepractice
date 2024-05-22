@@ -410,5 +410,5 @@ const rps = (p1, p2) => {
     }
 };
 
-console.log(rps('scissors', 'paper'))
-console.log(rps('rock', 'rock'))
+// console.log(rps('scissors', 'paper'))
+// console.log(rps('rock', 'rock'))
