@@ -99,5 +99,20 @@ def count_by(x, n):
     return list
 
 
-print(count_by(1, 10))
-print(count_by(2, 5))
+# print(count_by(1, 10))
+# print(count_by(2, 5))
+
+
+def double_char(s):
+    return "".join(c * 2 for c in s)
+
+
+# print(double_char("String"))
+
+
+def is_even(n):
+
+    return True if not n % 2 else False
+
+
+print(is_even(0.5))
