@@ -115,4 +115,17 @@ def is_even(n):
     return True if not n % 2 else False
 
 
-print(is_even(0.5))
+# print(is_even(0.5))
+
+
+def series_sum(n):
+    res = 0
+    div = 1
+    for x in range(n):
+        res += 1 / div
+        div = div + 3
+    # res = round(res, 2)
+    return f"{res:.2f}"
+
+
+print(series_sum(1))
