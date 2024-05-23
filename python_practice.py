@@ -138,3 +138,8 @@ def to_jaden_case(string):
         res.append(x)
     " ".join(res)
     return " ".join([elem for elem in res])
+
+
+def get_middle(s):
+    index, odd = divmod(len(s), 2)
+    return s[index] if odd else s[index - 1 : index + 1]
