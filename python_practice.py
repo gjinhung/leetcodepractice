@@ -124,8 +124,17 @@ def series_sum(n):
     for x in range(n):
         res += 1 / div
         div = div + 3
-    # res = round(res, 2)
     return f"{res:.2f}"
 
 
-print(series_sum(1))
+# print(series_sum(1))
+
+
+def to_jaden_case(string):
+    str = string.split(" ")
+    res = []
+    for x in str:
+        x = x.capitalize()
+        res.append(x)
+    " ".join(res)
+    return " ".join([elem for elem in res])
