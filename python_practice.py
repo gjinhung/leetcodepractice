@@ -161,4 +161,19 @@ def get_sum(a, b):
         return sum
 
 
-print(get_sum(0, -1))
+# print(get_sum(0, -1))
+
+
+def longest(a1, a2):
+    res = ""
+    comb = list(set(a1 + a2))
+    comb.sort()
+    for x in comb:
+        res = res + x
+    return res
+
+
+a = "aretheyhere"
+b = "yestheyareher"
+
+print(longest(a, b))
