@@ -173,7 +173,27 @@ def longest(a1, a2):
     return res
 
 
-a = "aretheyhere"
-b = "yestheyareher"
+# a = "aretheyhere"
+# b = "yestheyareher"
 
-print(longest(a, b))
+# print(longest(a, b))
+
+
+def century(year):
+    year = f"{year}"
+    if year == 0:
+        return 0
+    if len(year) < 3:
+        return 1
+    length = len(year)
+
+    res = int(year[0 : length - 2])
+    if int(year[-2:length]) > 0:
+        res += 1
+
+    # year[length - 2, length - 1]
+
+    return res
+
+
+print(century(22289))
