@@ -205,4 +205,19 @@ def count_sheep(n):
     return res
 
 
-print(count_sheep(3))
+# return ''.join(f"{i} sheep..." for i in range(1,n+1))
+
+
+# print(count_sheep(3))
+
+
+def remove_every_other(my_list):
+    res = []
+    for x in range(len(my_list)):
+        if not x % 2:
+            res.append(my_list[x])
+
+    return res
+
+
+print(remove_every_other(["Hello", "Goodbye", "Hello Again"]))
