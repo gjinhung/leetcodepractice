@@ -143,3 +143,22 @@ def to_jaden_case(string):
 def get_middle(s):
     index, odd = divmod(len(s), 2)
     return s[index] if odd else s[index - 1 : index + 1]
+
+
+def get_sum(a, b):
+    sum = 0
+    if a == b:
+        return a
+    if a < b:
+        while a < (b + 1):
+            sum = sum + a
+            a += 1
+        return sum
+    else:
+        while b < (a + 1):
+            sum = sum + b
+            b += 1
+        return sum
+
+
+print(get_sum(0, -1))
