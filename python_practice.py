@@ -190,10 +190,19 @@ def century(year):
     res = int(year[0 : length - 2])
     if int(year[-2:length]) > 0:
         res += 1
-
-    # year[length - 2, length - 1]
-
     return res
 
 
-print(century(22289))
+# print(century(22289))
+
+
+def count_sheep(n):
+    res = ""
+    count = 1
+    while count <= n:
+        res = res + f"{count} sheep..."
+        count += 1
+    return res
+
+
+print(count_sheep(3))
