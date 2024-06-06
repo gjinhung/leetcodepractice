@@ -254,3 +254,13 @@ def greet(language):
 
 
 # print(greet("irish"))
+
+
+def invert(lst):
+    res = []
+    for x in lst:
+        res.append(eval(f"{-1}{'*'}{x}"))
+    return res
+
+
+print(invert([1, 2, 3, 4, 5]))
