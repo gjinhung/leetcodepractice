@@ -227,4 +227,30 @@ def basic_op(operator, value1, value2):
     return eval(f"{value1}{operator}{value2}")
 
 
-print(basic_op("+", 4, 7))
+# print(basic_op("+", 4, 7))
+
+
+def greet(language):
+    lan = {
+        "english": "Welcome",
+        "czech": "Vitejte",
+        "danish": "Velkomst",
+        "dutch": "Welkom",
+        "estonian": "Tere tulemast",
+        "finnish": "Tervetuloa",
+        "flemish": "Welgekomen",
+        "french": "Bienvenue",
+        "german": "Willkommen",
+        "irish": "Failte",
+        "italian": "Benvenuto",
+        "latvian": "Gaidits",
+        "lithuanian": "Laukiamas",
+        "polish": "Witamy",
+        "spanish": "Bienvenido",
+        "swedish": "Valkommen",
+        "welsh": "Croeso",
+    }
+    return lan.get(language, "Welcome")
+
+
+# print(greet("irish"))
