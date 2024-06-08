@@ -263,4 +263,22 @@ def invert(lst):
     return res
 
 
-print(invert([1, 2, 3, 4, 5]))
+# print(invert([1, 2, 3, 4, 5]))
+
+
+def number(lines):
+    # num = 1
+    # res = []
+    # for x in lines:
+    #     res.append(f"{num}: {x}")
+    #     num += 1
+    # return res
+
+    return [f"{x+1}: {lines[x]}" for x in range(len(lines))]
+
+
+# print(number(["a", "b", "c"]))
+
+
+def validate_pin(pin):
+    return len(pin) in [4, 6] and pin.isdigit()
