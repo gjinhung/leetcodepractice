@@ -326,4 +326,8 @@ def switch_it_up(number):
     ][number]
 
 
-print(switch_it_up(0))
+# print(switch_it_up(0))
+
+
+def reverse_seq(n):
+    return [n - x for x in range(n)]
