@@ -282,3 +282,20 @@ def number(lines):
 
 def validate_pin(pin):
     return len(pin) in [4, 6] and pin.isdigit()
+
+
+def row_sum_odd_numbers(n):
+    count = 1
+    total = 0
+    res = 0
+    while count < n:
+        total += count
+        count += 1
+    start = (total * 2) + 1
+    for x in range(n):
+        res += start
+        start += 2
+    return res
+
+
+print(row_sum_odd_numbers(2))
