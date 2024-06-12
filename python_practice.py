@@ -285,17 +285,27 @@ def validate_pin(pin):
 
 
 def row_sum_odd_numbers(n):
-    count = 1
-    total = 0
-    res = 0
-    while count < n:
-        total += count
-        count += 1
-    start = (total * 2) + 1
-    for x in range(n):
-        res += start
-        start += 2
-    return res
+    # count = 1
+    # total = 0
+    # res = 0
+    # while count < n:
+    #     total += count
+    #     count += 1
+    # start = (total * 2) + 1
+    # for x in range(n):
+    #     res += start
+    #     start += 2
+    # return res
+    return n**3
 
 
-print(row_sum_odd_numbers(2))
+# print(row_sum_odd_numbers(3))
+
+
+def how_much_i_love_you(nb_petals):
+    words = ["I love you", "a little", "a lot", "passionately", "madly", "not at all"]
+    idx = nb_petals % 6
+    return words[idx - 1]
+
+
+print(how_much_i_love_you(6))
