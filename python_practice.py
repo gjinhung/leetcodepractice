@@ -308,4 +308,22 @@ def how_much_i_love_you(nb_petals):
     return words[idx - 1]
 
 
-print(how_much_i_love_you(6))
+# print(how_much_i_love_you(6))
+
+
+def switch_it_up(number):
+    return [
+        "Zero",
+        "One",
+        "Two",
+        "Three",
+        "Four",
+        "Five",
+        "Six",
+        "Seven",
+        "Eight",
+        "Nine",
+    ][number]
+
+
+print(switch_it_up(0))
