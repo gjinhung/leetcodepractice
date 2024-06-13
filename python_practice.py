@@ -404,4 +404,12 @@ def alphabet_position(text):
         "y",
         "z",
     ]
-    st = st.lower()
+    st = text.lower()
+    res = []
+    for char in list(st):
+        if char in alph:
+            res.append(f"{alph.index(char) + 1}")
+    return " ".join(res)
+
+
+print(alphabet_position("The sunset sets at twelve o' clock."))
