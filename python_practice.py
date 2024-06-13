@@ -331,3 +331,77 @@ def switch_it_up(number):
 
 def reverse_seq(n):
     return [n - x for x in range(n)]
+
+
+# return list(range(n, 0, -1))
+
+
+def is_pangram(st):
+    alph = [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+    ]
+    st = st.lower()
+    for x in alph:
+        if st.count(x) < 1:
+            return False
+    return True
+
+
+# print(is_pangram("The quick brown fox jumps over the lazy dog."))
+
+
+def alphabet_position(text):
+    alph = [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+    ]
+    st = st.lower()
