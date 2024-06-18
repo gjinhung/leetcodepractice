@@ -412,4 +412,38 @@ def alphabet_position(text):
     return " ".join(res)
 
 
-print(alphabet_position("The sunset sets at twelve o' clock."))
+# print(alphabet_position("The sunset sets at twelve o' clock."))
+
+
+def twoSum(nums, target):
+    # num1 = 0
+    # num2 = 1
+    # length = len(nums) - 2
+    # while num1 <= length:
+    #     print(f"{nums[num1]} + {nums[num2]}")
+    #     if nums[num1] + nums[num2] == target:
+    #         return [num1, num2]
+    #     num2 += 1
+    #     if num2 == len(nums):
+    #         num1 += 1
+    #         num2 = num1 + 1
+    # return []
+
+    # for num in nums:
+    #     diff = target - num
+    #     if diff != num:
+    #         return [nums.index(num), nums.index(diff)]
+
+    numhash = {nums}
+    return numhash
+
+
+# print(twoSum([3, 2, 4], 6))
+
+
+def hasDuplicate(self, nums: List[int]) -> bool:
+    nums.sort()
+    for x in nums:
+        if nums.count(x) > 1:
+            return True
+    return False
