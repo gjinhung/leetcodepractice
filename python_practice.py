@@ -472,4 +472,43 @@ def twoSum2(nums, target):
             hashSet[num] = idx
 
 
-print(twoSum2([3, 4, 5, 6], 7))
+# print(twoSum2([3, 4, 5, 6], 7))
+
+
+# input = array of strs
+# output = array of sets of lists with anagrams
+# [["hat"],["act", "cat"],["stop", "pots", "tops"]]
+
+
+def groupAnagrams(strs):
+
+    hashSet = {}
+
+    result = []
+
+    for idx, str in enumerate(strs):
+
+        if len(str) in hashSet:
+            array = hashSet[len(str)]
+            array.append([idx, str])
+            hashSet[len(str)] = array
+
+        else:
+            hashSet[len(str)] = [[idx, str]]
+
+    for x in hashSet.values():
+        hashX = {}
+        for set in x:
+            res = list(set[1])
+            res.sort()
+            res2 = "".join(res)
+            if res2 in hashX:
+                hashX[res2].append(strs[set[0]])
+            else:
+                hashX[res2] = [strs[set[0]]]
+        for k in hashX.values():
+            result.append(k)
+    return result
+
+
+print(groupAnagrams(["act", "pots", "tops", "cat", "stop", "hat"]))
