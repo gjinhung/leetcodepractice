@@ -479,36 +479,75 @@ def twoSum2(nums, target):
 # output = array of sets of lists with anagrams
 # [["hat"],["act", "cat"],["stop", "pots", "tops"]]
 
+from collections import defaultdict
+
 
 def groupAnagrams(strs):
 
-    hashSet = {}
+    ans = defaultdict(list)
+    print(ans)
 
-    result = []
+    for s in strs:
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord("a")] += 1
+        ans[tuple(count)].append(s)
+        # print(ans)
+    return ans.values()
 
-    for idx, str in enumerate(strs):
+    # hashSet = {}
 
-        if len(str) in hashSet:
-            array = hashSet[len(str)]
-            array.append([idx, str])
-            hashSet[len(str)] = array
+    # result = []
 
-        else:
-            hashSet[len(str)] = [[idx, str]]
+    # for idx, str in enumerate(strs):
 
-    for x in hashSet.values():
-        hashX = {}
-        for set in x:
-            res = list(set[1])
-            res.sort()
-            res2 = "".join(res)
-            if res2 in hashX:
-                hashX[res2].append(strs[set[0]])
-            else:
-                hashX[res2] = [strs[set[0]]]
-        for k in hashX.values():
-            result.append(k)
-    return result
+    #     if len(str) in hashSet:
+    #         array = hashSet[len(str)]
+    #         array.append([idx, str])
+    #         hashSet[len(str)] = array
+
+    #     else:
+    #         hashSet[len(str)] = [[idx, str]]
+
+    # for x in hashSet.values():
+    #     hashX = {}
+    #     for set in x:
+    #         res = list(set[1])
+    #         res.sort()
+    #         res2 = "".join(res)
+    #         if res2 in hashX:
+    #             hashX[res2].append(strs[set[0]])
+    #         else:
+    #             hashX[res2] = [strs[set[0]]]
+    #     for k in hashX.values():
+    #         result.append(k)
+    # return result
 
 
-print(groupAnagrams(["act", "pots", "tops", "cat", "stop", "hat"]))
+# print(groupAnagrams(["act", "pots", "tops", "cat", "stop", "hat"]))
+
+# input string
+# output true/false
+
+
+def isPalindrome(s):
+    ls = s.lower()
+    newS = ""
+    for i in range(len(ls)):
+        if ls[i].isalpha():
+            newS += ls[i]
+    if len(newS) == 1:
+        return True
+    half = 0
+    if len(newS) % 2 > 0:
+        half = ((len(newS)) / 2) + 0.5
+    else:
+        half = (len(newS)) / 2
+    print(newS)
+    for x in range(int(half)):
+        if newS[x] != newS[len(newS) - x - 1]:
+            return False
+    return True
+
+
+print(isPalindrome("0P"))
