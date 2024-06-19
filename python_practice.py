@@ -441,9 +441,23 @@ def twoSum(nums, target):
 # print(twoSum([3, 2, 4], 6))
 
 
-def hasDuplicate(self, nums: List[int]) -> bool:
+def hasDuplicate(nums):
     nums.sort()
     for x in nums:
         if nums.count(x) > 1:
             return True
     return False
+
+
+def isAnagram(s, t):
+    if len(s) != len(t):
+        return False
+    countS, countT = {}, {}
+
+    for i in range(len(s)):
+        countS[s[i]] = 1 + countS.get(s[i], 0)
+        countT[t[i]] = 1 + countT.get(t[i], 0)
+    return countS == countT
+
+
+print(isAnagram("cat", "tdc"))
