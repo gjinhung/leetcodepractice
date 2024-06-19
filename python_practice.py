@@ -411,11 +411,9 @@ def alphabet_position(text):
             res.append(f"{alph.index(char) + 1}")
     return " ".join(res)
 
+    # print(alphabet_position("The sunset sets at twelve o' clock."))
 
-# print(alphabet_position("The sunset sets at twelve o' clock."))
-
-
-def twoSum(nums, target):
+    # def twoSum(nums, target):
     # num1 = 0
     # num2 = 1
     # length = len(nums) - 2
@@ -460,4 +458,18 @@ def isAnagram(s, t):
     return countS == countT
 
 
-print(isAnagram("cat", "tdc"))
+# print(isAnagram("cat", "tdc"))
+
+
+def twoSum2(nums, target):
+    hashSet = {}
+
+    for idx, num in enumerate(nums):
+        diff = target - num
+        if diff in hashSet:
+            return [hashSet[diff], idx]
+        else:
+            hashSet[num] = idx
+
+
+print(twoSum2([3, 4, 5, 6], 7))
