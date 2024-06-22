@@ -534,16 +534,16 @@ def isPalindrome(s):
     ls = s.lower()
     newS = ""
     for i in range(len(ls)):
-        if ls[i].isalpha():
+        if ls[i].isalnum():
             newS += ls[i]
     if len(newS) == 1:
         return True
     half = 0
+    print(newS)
     if len(newS) % 2 > 0:
         half = ((len(newS)) / 2) + 0.5
     else:
         half = (len(newS)) / 2
-    print(newS)
     for x in range(int(half)):
         if newS[x] != newS[len(newS) - x - 1]:
             return False
