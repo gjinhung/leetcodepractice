@@ -539,7 +539,6 @@ def isPalindrome(s):
     if len(newS) == 1:
         return True
     half = 0
-    print(newS)
     if len(newS) % 2 > 0:
         half = ((len(newS)) / 2) + 0.5
     else:
@@ -550,4 +549,24 @@ def isPalindrome(s):
     return True
 
 
-print(isPalindrome("0P"))
+# print(isPalindrome("0P"))
+
+def maxProfit(prices) -> int:
+    # res = 0
+    # l = len(prices) - 1
+    # while l > 0:
+    #     i = 0
+    #     while i < l:
+    #         if (prices[l] - prices[i]) > res:
+    #             res = prices[l] - prices[i]
+    #         i += 1
+    #     l -= 1
+    # return res
+    res = 0
+    for idx, ele in enumerate(prices):
+        if idx > 0:
+            if ele - min(prices[:idx]) > res :
+                res = ele - min(prices[:idx])
+    return res
+
+print(maxProfit([1,2,3,4,5]))
