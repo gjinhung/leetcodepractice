@@ -569,4 +569,28 @@ def maxProfit(prices) -> int:
                 res = ele - min(prices[:idx])
     return res
 
-print(maxProfit([1,2,3,4,5]))
+# print(maxProfit([1,2,3,4,5]))
+
+
+def isValid(s):
+        
+        front = [] #["[", "("]
+        beg = {"{": "}",
+        "[": "]",
+        "(": ")"}
+        for x in s: #x="]"
+            if x in beg.keys(): #false
+                front.append(x)
+            elif not len(front):
+                return False
+            elif x != beg[front[-1]]: #x = ] beg[(] = )
+                return False
+            else:
+                del front[-1] 
+        if not len(front):
+            return True
+        else:
+            return False
+
+
+print(isValid("(("))
