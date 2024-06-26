@@ -619,3 +619,18 @@ def reverseList(head: ListNode):
             prev = curr
             curr = temp
         return prev
+
+
+def twoMergedList(list1, list2):
+    merged = ListNode()
+    curr = merged
+    while list1 and list2:
+        if list1.val <= list2.val:
+            curr.next = list1
+            list1 = list1.next
+        else:
+            curr.next = list2
+            list2 = list2.next
+        curr = curr.next
+    curr.next = list1 or list2
+    return merged.next
