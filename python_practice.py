@@ -593,4 +593,29 @@ def isValid(s):
             return False
 
 
-print(isValid("(("))
+# print(isValid("(("))
+
+def search(nums, target):
+    if target in nums:
+        return nums.index(target)
+    else:
+        return -1
+    
+# print(search([-1,3,3,0,2,4,6,8,3], 3))
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
+def reverseList(head: ListNode):
+        prev = None
+        curr = head
+
+        while curr:
+            temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = temp
+        return prev
