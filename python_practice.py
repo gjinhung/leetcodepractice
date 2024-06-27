@@ -634,3 +634,27 @@ def twoMergedList(list1, list2):
         curr = curr.next
     curr.next = list1 or list2
     return merged.next
+
+
+
+def topKFrequent(nums, k):
+    freq = [[] for i in range(len(nums) + 1)]
+    hashMap = {}
+    for num in nums:
+        hashMap[num] = 1 + hashMap.get(num, 0)
+
+    
+    for e, v in hashMap.items():
+        freq[e].append(v)
+        # if v > maxV:
+        #     maxV = v
+        #     maxK = e
+
+    res = []
+    for i in range(len(freq) - 1, 0, -1):
+        for n in freq[i]:
+            res.append(n)
+            if len(res) == k:
+                return res
+    
+print(topKFrequent([4,2,2,2,2,3,3], 2))
