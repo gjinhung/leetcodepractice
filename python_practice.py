@@ -657,4 +657,13 @@ def topKFrequent(nums, k):
             if len(res) == k:
                 return res
     
-print(topKFrequent([4,2,2,2,2,3,3], 2))
+# print(topKFrequent([4,2,2,2,2,3,3], 2))
+
+
+def missingNumber(nums) -> int:
+    for x in range(len(nums)):
+        if x not in nums:
+            return x
+    return len(nums)
+
+print(missingNumber([3,0,1]))
