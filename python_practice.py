@@ -666,4 +666,35 @@ def missingNumber(nums) -> int:
             return x
     return len(nums)
 
-print(missingNumber([3,0,1]))
+# print(missingNumber([3,0,1]))
+
+def reverseBits(n) -> int:
+    newB = ['0' for i in range(32)]
+    count = 0
+    b = bin(n)[2::]
+    for x in range(len(list(b)), 0, -1):
+        newB[count] = (b[x-1])
+        count += 1
+    return int(''.join(newB), 2)
+
+
+# print(reverseBits(21))
+
+def countingBits(n):
+    res = [] * n + 1
+    for i in range(n+1):
+        
+        count = list(bin(i)[2::]).count('1')
+        res.append(count)
+    return res
+
+# print(countingBits(4))
+
+def hammingWeight(n):
+    res = 0
+    while n:
+        n &= n - 1
+        res += 1
+    return res
+
+print(hammingWeight(11))
