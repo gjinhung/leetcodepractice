@@ -697,4 +697,10 @@ def hammingWeight(n):
         res += 1
     return res
 
-print(hammingWeight(11))
+# print(hammingWeight(11))
+
+def singleNumber(nums):
+    res = 0
+    for n in nums:
+        res = n ^ res
+    return res
