@@ -704,3 +704,14 @@ def singleNumber(nums):
     for n in nums:
         res = n ^ res
     return res
+
+
+def digitize(n):
+    return [int(x) for x in str(n)[::-1]]
+
+# print(digitize(3541))
+
+def hoop_count(n):
+     return "Great, now move on to tricks" if n>=10 else "Keep at it until you get it"
+
+print(hoop_count(0))
