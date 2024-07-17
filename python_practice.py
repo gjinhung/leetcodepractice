@@ -714,4 +714,19 @@ def digitize(n):
 def hoop_count(n):
      return "Great, now move on to tricks" if n>=10 else "Keep at it until you get it"
 
-print(hoop_count(0))
+# print(hoop_count(0))
+
+
+def reverse_words(text):
+    # newString = text.split(' ')
+    
+    # for x in range(len(newString)):
+    #     reverse = ''
+        
+    #     for y in range(len(newString[x]), 0, -1):
+    #         reverse = reverse + (newString[x][y-1])
+    #     newString[x] = reverse
+    # return ' '.join(newString)
+    return ' '.join(t[::-1] for t in text.split(' '))
+
+print(reverse_words('tesT this Example'))
