@@ -742,4 +742,24 @@ def disemvowel(string_):
     
     return res
 
-print(disemvowel("First fixed test"))
+# print(disemvowel("First fixed test"))
+
+def correct(t):
+    hashSet = {
+        '5': "S",
+        '0': "O",
+        '1': "I"
+    }
+
+    s = list(t)
+    
+    for x in range(len(s)):
+        if s[x] in hashSet:
+            # print(hashSet[s[x]])
+            print(hashSet[s[x]])
+            s[x] = hashSet[s[x]]
+        else:
+            continue
+    return ''.join(s)
+
+print(correct('L0ND0N'))
