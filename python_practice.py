@@ -729,4 +729,17 @@ def reverse_words(text):
     # return ' '.join(newString)
     return ' '.join(t[::-1] for t in text.split(' '))
 
-print(reverse_words('tesT this Example'))
+# print(reverse_words('tesT this Example'))
+
+def disemvowel(string_):
+    return ''.join(c for c in string_ if c.lower() not in "aeiou")
+    vowels = ["A", "E", "I", "O", "U"]
+    res = ''
+    
+    for x in string_:
+        if x.upper() not in vowels:
+            res += x
+    
+    return res
+
+print(disemvowel("First fixed test"))
