@@ -771,4 +771,18 @@ def stray(arr):
     for n, c in count.items():
         l[c] = n
     return l[1]
-print(stray([1, 1, 2]))
+# print(stray([1, 1, 2]))
+
+def expandedForm(num):
+    s = str(num)
+    l = len(s)
+    res = []
+    for i, x in enumerate(s):
+        if int(x) > 0:
+            e = '0'* (l - (i + 1))
+            res.append(f'{x}{e}')
+    
+    return (' + '.join(res))
+print(expandedForm(70305))
+
+
