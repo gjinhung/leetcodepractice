@@ -755,11 +755,20 @@ def correct(t):
     
     for x in range(len(s)):
         if s[x] in hashSet:
-            # print(hashSet[s[x]])
-            print(hashSet[s[x]])
             s[x] = hashSet[s[x]]
         else:
             continue
     return ''.join(s)
 
-print(correct('L0ND0N'))
+# print(correct('L0ND0N'))
+
+def stray(arr):
+    count = {}
+    l = [[] for i in range(len(arr) + 1)]
+    for x in arr:
+        count[x] = 1 + count.get(x, 0)
+
+    for n, c in count.items():
+        l[c] = n
+    return l[1]
+print(stray([1, 1, 2]))
