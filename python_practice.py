@@ -789,5 +789,10 @@ def remove_char(s):
     return s[1:-1]
 
 
-print(remove_char('test'))
+# print(remove_char('test'))
+
+def sum_str(a, b):
+    return str(int(a or 0) + int(b or 0))
+
+print(sum_str("", '2'))
 
