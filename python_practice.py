@@ -783,6 +783,11 @@ def expandedForm(num):
             res.append(f'{x}{e}')
     
     return (' + '.join(res))
-print(expandedForm(70305))
+# print(expandedForm(70305))
 
+def remove_char(s):
+    return s[1:-1]
+
+
+print(remove_char('test'))
 
