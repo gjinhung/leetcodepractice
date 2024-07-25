@@ -1,3 +1,5 @@
+import math
+
 def is_same_num(num1, num2):
     if num1 == num2:
         return True
@@ -811,4 +813,19 @@ def human_years_cat_years_dog_years(human_years):
         res[2] = 9 + 15  + ((human_years - 2) * 5)
     return res
 
-print(human_years_cat_years_dog_years(10))
+# print(human_years_cat_years_dog_years(10))
+
+def divisors(n):
+    # count = 0
+    # mid = int(math.sqrt(n)) + 1
+    # for i in range(1, mid):
+    #     if not n%i:
+    #         count += 2
+
+    # if (int(math.sqrt(n)) ** 2 == n):
+    #     count -= 1
+    # return count
+    return sum([True if n%i == 0 else False for i in range(1, n + 1)])
+
+
+print(divisors(4))
