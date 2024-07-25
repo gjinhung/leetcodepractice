@@ -794,8 +794,21 @@ def remove_char(s):
 def sum_str(a, b):
     return str(int(a or 0) + int(b or 0))
 
-print(sum_str("", '2'))
+# print(sum_str("", '2'))
 
 
 def other_angle(a,b):
     return (180 - a - b)
+
+def human_years_cat_years_dog_years(human_years):
+    res = [human_years,0,0]
+    if (human_years == 1):
+        res[1] = res[2] = 15
+    if (human_years == 2):
+        res[1] = res[2] = 9 + 15
+    if (human_years > 2):
+        res[1] = 9 + 15  + ((human_years - 2) * 4)
+        res[2] = 9 + 15  + ((human_years - 2) * 5)
+    return res
+
+print(human_years_cat_years_dog_years(10))
