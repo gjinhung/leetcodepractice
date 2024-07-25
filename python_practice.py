@@ -796,3 +796,6 @@ def sum_str(a, b):
 
 print(sum_str("", '2'))
 
+
+def other_angle(a,b):
+    return (180 - a - b)
