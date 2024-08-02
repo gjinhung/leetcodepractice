@@ -866,6 +866,7 @@ def find_smallest_int(arr):
     return smallest
 
     # return min(arr)
+# print(find_smallest_int([1,2,3]))
 
 def first_non_consecutive(arr):
     for i in range(1, len(arr)):
@@ -873,4 +874,11 @@ def first_non_consecutive(arr):
             return arr[i]
     return None
 
-print(first_non_consecutive([1,2,3,4]))
+# print(first_non_consecutive([1,2,3,4]))
+
+def reverse_list(l):
+    return [l[i-1] for i in range(len(l), 0, -1)]
+         
+
+
+print(reverse_list([1,2,3,4]))
