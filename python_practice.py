@@ -855,4 +855,14 @@ def tribonacci(signature, n):
             res.append(signature[i])
         return res
 
-print(tribonacci([1, 2, 3], 2))
+# print(tribonacci([1, 2, 3], 2))
+
+def find_smallest_int(arr):
+    smallest = arr[0]
+
+    for i in arr:
+        if i < smallest:
+            smallest = i
+    return smallest
+
+    # return min(arr)
