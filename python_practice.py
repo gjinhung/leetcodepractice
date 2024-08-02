@@ -828,4 +828,15 @@ def divisors(n):
     return sum([True if n%i == 0 else False for i in range(1, n + 1)])
 
 
-print(divisors(4))
+# print(divisors(4))
+
+def delete_nth(order,max_e):
+    hashSet = {}
+    res = []
+    for e in order:
+        if e not in hashSet or hashSet[e] < max_e:
+            hashSet[e] = 1 + hashSet.get(e, 0)
+            res.append(e)
+    return res
+
+print(delete_nth([1,2,3,1,2,1,2,3], 2))
