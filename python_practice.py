@@ -839,4 +839,20 @@ def delete_nth(order,max_e):
             res.append(e)
     return res
 
-print(delete_nth([1,2,3,1,2,1,2,3], 2))
+# print(delete_nth([1,2,3,1,2,1,2,3], 2))
+
+def tribonacci(signature, n):
+    if n >= 3:
+        res = signature
+        for i in range(n - len(signature)):
+            print(i)
+            newNum = sum(res[-3::])
+            res.append(newNum)
+        return res
+    else:
+        res = []
+        for i in range(n):
+            res.append(signature[i])
+        return res
+
+print(tribonacci([1, 2, 3], 2))
