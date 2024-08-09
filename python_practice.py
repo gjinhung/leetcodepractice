@@ -887,9 +887,18 @@ def nb_year(p0, percent, aug, p):
     yr = 0
     pop = p0
     while pop < p:
-        print((pop * percent * .01 + aug))
         pop = math.floor(pop + ((pop * (percent * .01)) + aug))
         yr += 1
     return yr
 
-print(nb_year(1000, 2.0, 50, 1214))
+# print(nb_year(1000, 2.0, 50, 1214))
+
+
+def tower_builder(n_floors):
+    res = []
+    for x in range(0, n_floors):
+        res.append(f'{" "*(n_floors - x - 1)}{"*" * ((x * 2) + 1)}{" "*(n_floors - x- 1)}')
+        # res.append(f"{" "*(n_floors - x)}{res[x-1] + "**"}{" "*(n_floors - x)}")
+    return res
+
+print(tower_builder(3))
