@@ -928,4 +928,16 @@ def update_light(current):
     lights = ["green", "yellow", "red", "green"]
     return lights[lights.index(current) + 1]
 
-print(update_light("yellow"))
+# print(update_light("yellow"))
+
+def expression_matter(a, b, c):
+    return max(
+        a + b + c,
+        a + b * c,
+        (a + b) * c,
+        a * b * c,
+        a * b + c,
+        a * (b + c),
+    )
+
+print(expression_matter(3, 3, 3))
