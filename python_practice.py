@@ -922,4 +922,10 @@ def count_smileys(arr):
                     
     return count
 
-print(count_smileys([':-D', ';(', ';D', ':oD', ':o(', ';o(', ':-D', ';-(', ';oD', ':(', ':D', ';o(', ';-(', ';-D', ';D']))
+# print(count_smileys([':-D', ';(', ';D', ':oD', ':o(', ';o(', ':-D', ';-(', ';oD', ':(', ':D', ';o(', ';-(', ';-D', ';D']))
+
+def update_light(current):
+    lights = ["green", "yellow", "red", "green"]
+    return lights[lights.index(current) + 1]
+
+print(update_light("yellow"))
