@@ -901,4 +901,25 @@ def tower_builder(n_floors):
         # res.append(f"{" "*(n_floors - x)}{res[x-1] + "**"}{" "*(n_floors - x)}")
     return res
 
-print(tower_builder(3))
+# print(tower_builder(3))
+
+def count_smileys(arr):
+    count = 0
+    for face in arr:
+        eyes = False
+        nose = True
+        validN = ['~', "-"]
+        validM = [')', "D"]
+        for x in face:
+            if not eyes:
+                if x == ";" or x == ":":
+                    eyes = True
+            elif nose: 
+                if x not in validM and x not in validN:
+                    nose = False
+                elif x in validM:
+                    count += 1
+                    
+    return count
+
+print(count_smileys([':-D', ';(', ';D', ':oD', ':o(', ';o(', ':-D', ';-(', ';oD', ':(', ':D', ';o(', ';-(', ';-D', ';D']))
