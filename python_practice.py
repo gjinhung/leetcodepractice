@@ -881,4 +881,15 @@ def reverse_list(l):
          
 
 
-print(reverse_list([1,2,3,4]))
+# print(reverse_list([1,2,3,4]))
+
+def nb_year(p0, percent, aug, p):
+    yr = 0
+    pop = p0
+    while pop < p:
+        print((pop * percent * .01 + aug))
+        pop = math.floor(pop + ((pop * (percent * .01)) + aug))
+        yr += 1
+    return yr
+
+print(nb_year(1000, 2.0, 50, 1214))
