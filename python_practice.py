@@ -940,4 +940,9 @@ def expression_matter(a, b, c):
         a * (b + c),
     )
 
-print(expression_matter(3, 3, 3))
+# print(expression_matter(3, 3, 3))
+
+def between(a,b):
+    return [x for x in range(a, b+1)]
+
+print(between(1,3))
