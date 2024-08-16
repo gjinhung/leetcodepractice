@@ -945,4 +945,21 @@ def expression_matter(a, b, c):
 def between(a,b):
     return [x for x in range(a, b+1)]
 
-print(between(1,3))
+# print(between(1,3))
+
+def sort_array(source_array):
+    indexes = []
+    odds = []
+    for idx, el in enumerate(source_array):
+        if el%2 != 0:
+            indexes.append(idx)
+            odds.append(el)
+    odds.sort()
+    # print(odds)
+    for x in range(len(indexes)):
+        print(x)
+        source_array[indexes[x]] = odds[x]
+    
+    return source_array
+
+print(sort_array([]))
