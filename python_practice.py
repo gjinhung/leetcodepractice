@@ -955,11 +955,16 @@ def sort_array(source_array):
             indexes.append(idx)
             odds.append(el)
     odds.sort()
-    # print(odds)
     for x in range(len(indexes)):
-        print(x)
         source_array[indexes[x]] = odds[x]
-    
     return source_array
 
-print(sort_array([]))
+# print(sort_array([]))
+
+def small_enough(array, limit):
+    for x in array:
+        if x > limit:
+            return False
+    return True
+
+print(small_enough([66, 101] ,200))
