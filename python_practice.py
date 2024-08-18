@@ -967,4 +967,10 @@ def small_enough(array, limit):
             return False
     return True
 
-print(small_enough([66, 101] ,200))
+# print(small_enough([66, 101] ,200))
+
+def gimme(input_array):
+    return input_array.index(sorted(input_array)[1])
+
+    
+print(gimme([15,10,14]))
