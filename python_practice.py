@@ -973,4 +973,9 @@ def gimme(input_array):
     return input_array.index(sorted(input_array)[1])
 
     
-print(gimme([15,10,14]))
+# print(gimme([15,10,14]))
+
+def pipe_fix(nums):
+    return [x for x in range(min(nums), max(nums)+1)]
+
+print(pipe_fix([1, 2, 3, 12]))
