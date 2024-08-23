@@ -1019,4 +1019,10 @@ def encrypt(text, n):
         text = encryptOnce(text)
     return text
 
-print(encrypt(decrypt("01234", 2), 2))
+# print(encrypt(decrypt("01234", 2), 2))
+
+def is_palindrome(s):
+    return s.lower() == ''.join(list(s.lower())[::-1])
+    
+
+print(is_palindrome("rAcecar"))
