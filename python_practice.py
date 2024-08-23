@@ -978,4 +978,23 @@ def gimme(input_array):
 def pipe_fix(nums):
     return [x for x in range(min(nums), max(nums)+1)]
 
-print(pipe_fix([1, 2, 3, 12]))
+# print(pipe_fix([1, 2, 3, 12]))
+
+def decrypt(encrypted_text, n):
+    def decryptOnce(encrypted_text):
+        odd = ''
+        even = ''
+        for idx, el in enumerate(encrypted_text):
+            if idx % 2: #if odd
+                odd += el
+            else:
+                even += el
+        return odd + even
+    res = encrypted_text
+    for x in range(n):
+        res = decryptOnce(res)
+    return res
+
+print(decrypt("012345", 2))
+def encrypt(text, n):
+    pass
