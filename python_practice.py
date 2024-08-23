@@ -1025,4 +1025,14 @@ def is_palindrome(s):
     return s.lower() == ''.join(list(s.lower())[::-1])
     
 
-print(is_palindrome("rAcecar"))
+# print(is_palindrome("rAcecar"))
+
+def remove(s):
+    if s:
+        if (s[-1] == "!"):
+            return s[:-1]
+        else:
+            return s
+        return s
+    
+print(remove(""))
