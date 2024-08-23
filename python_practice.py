@@ -995,6 +995,28 @@ def decrypt(encrypted_text, n):
         res = decryptOnce(res)
     return res
 
-print(decrypt("012345", 2))
+# print(decrypt("012345", 2))
+
+
 def encrypt(text, n):
-    pass
+    def encryptOnce(encrypted_text):
+        mid = ''
+        if len(encrypted_text)%2: #if odd
+            mid = encrypted_text[math.floor(len(f'{encrypted_text}')/2)]
+            listText = list(encrypted_text)
+            listText.pop(math.floor(len(f'{encrypted_text}')/2))
+            encrypted_text = ''.join(listText)
+        num = ''
+        for x in range(math.floor(len(f'{encrypted_text}')/2)):
+            if not mid:
+                num += encrypted_text[math.floor(len(f'{encrypted_text}')/2) + x]
+                num += encrypted_text[x]
+            else:
+                num += encrypted_text[x]
+                num += encrypted_text[math.floor(len(f'{encrypted_text}')/2) + x]
+        return (mid + num)
+    for x in range(n):
+        text = encryptOnce(text)
+    return text
+
+print(encrypt(decrypt("01234", 2), 2))
