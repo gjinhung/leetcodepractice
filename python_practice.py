@@ -1033,6 +1033,17 @@ def remove(s):
             return s[:-1]
         else:
             return s
-        return s
+    return s
     
-print(remove(""))
+# print(remove(""))
+
+def factorial(n):
+    if n < 0 or n > 12:
+        raise ValueError("Invalid value provided.")
+    res = 1
+    for x in range(1, n + 1):
+        print(x)
+        res = res * x
+    return res
+
+print(factorial(3))
