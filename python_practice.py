@@ -1049,7 +1049,7 @@ def factorial(n):
 
 def persistence(n):
     count = 0
-    while n > 10:
+    while n >= 10:
         multi = 1
         for x in f'{n}':
             multi = multi * int(x)
@@ -1057,4 +1057,9 @@ def persistence(n):
         count += 1
     return count
 
-print(persistence(25))
+# print(persistence(25))
+
+def bin_to_decimal(inp):
+    return int(inp, 2)
+
+print(bin_to_decimal('101010'))
