@@ -1042,8 +1042,19 @@ def factorial(n):
         raise ValueError("Invalid value provided.")
     res = 1
     for x in range(1, n + 1):
-        print(x)
         res = res * x
     return res
 
-print(factorial(3))
+# print(factorial(3))
+
+def persistence(n):
+    count = 0
+    while n > 10:
+        multi = 1
+        for x in f'{n}':
+            multi = multi * int(x)
+        n = multi
+        count += 1
+    return count
+
+print(persistence(25))
