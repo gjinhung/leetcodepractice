@@ -1070,3 +1070,13 @@ def goose_filter(birds):
     return [bird for bird in birds if bird not in geese ]
 
 # print(goose_filter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]))
+
+def reverse_letter(st):
+    res = ''
+    for letter in st:
+        test = letter.isalpha()
+        if test:
+            res = letter + res
+    return res
+
+# print(reverse_letter('ultr53o?n'))
