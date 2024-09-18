@@ -1,5 +1,6 @@
 import math
 
+
 def is_same_num(num1, num2):
     if num1 == num2:
         return True
@@ -553,6 +554,7 @@ def isPalindrome(s):
 
 # print(isPalindrome("0P"))
 
+
 def maxProfit(prices) -> int:
     # res = 0
     # l = len(prices) - 1
@@ -567,43 +569,45 @@ def maxProfit(prices) -> int:
     res = 0
     for idx, ele in enumerate(prices):
         if idx > 0:
-            if ele - min(prices[:idx]) > res :
+            if ele - min(prices[:idx]) > res:
                 res = ele - min(prices[:idx])
     return res
+
 
 # print(maxProfit([1,2,3,4,5]))
 
 
 def isValid(s):
-        
-        front = [] #["[", "("]
-        beg = {"{": "}",
-        "[": "]",
-        "(": ")"}
-        for x in s: #x="]"
-            if x in beg.keys(): #false
-                front.append(x)
-            elif not len(front):
-                return False
-            elif x != beg[front[-1]]: #x = ] beg[(] = )
-                return False
-            else:
-                del front[-1] 
-        if not len(front):
-            return True
-        else:
+
+    front = []  # ["[", "("]
+    beg = {"{": "}", "[": "]", "(": ")"}
+    for x in s:  # x="]"
+        if x in beg.keys():  # false
+            front.append(x)
+        elif not len(front):
             return False
+        elif x != beg[front[-1]]:  # x = ] beg[(] = )
+            return False
+        else:
+            del front[-1]
+    if not len(front):
+        return True
+    else:
+        return False
 
 
 # print(isValid("(("))
+
 
 def search(nums, target):
     if target in nums:
         return nums.index(target)
     else:
         return -1
-    
+
+
 # print(search([-1,3,3,0,2,4,6,8,3], 3))
+
 
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -612,15 +616,15 @@ class ListNode:
 
 
 def reverseList(head: ListNode):
-        prev = None
-        curr = head
+    prev = None
+    curr = head
 
-        while curr:
-            temp = curr.next
-            curr.next = prev
-            prev = curr
-            curr = temp
-        return prev
+    while curr:
+        temp = curr.next
+        curr.next = prev
+        prev = curr
+        curr = temp
+    return prev
 
 
 def twoMergedList(list1, list2):
@@ -638,14 +642,12 @@ def twoMergedList(list1, list2):
     return merged.next
 
 
-
 def topKFrequent(nums, k):
     freq = [[] for i in range(len(nums) + 1)]
     hashMap = {}
     for num in nums:
         hashMap[num] = 1 + hashMap.get(num, 0)
 
-    
     for e, v in hashMap.items():
         freq[e].append(v)
         # if v > maxV:
@@ -658,7 +660,8 @@ def topKFrequent(nums, k):
             res.append(n)
             if len(res) == k:
                 return res
-    
+
+
 # print(topKFrequent([4,2,2,2,2,3,3], 2))
 
 
@@ -668,29 +671,34 @@ def missingNumber(nums) -> int:
             return x
     return len(nums)
 
+
 # print(missingNumber([3,0,1]))
 
+
 def reverseBits(n) -> int:
-    newB = ['0' for i in range(32)]
+    newB = ["0" for i in range(32)]
     count = 0
     b = bin(n)[2::]
     for x in range(len(list(b)), 0, -1):
-        newB[count] = (b[x-1])
+        newB[count] = b[x - 1]
         count += 1
-    return int(''.join(newB), 2)
+    return int("".join(newB), 2)
 
 
 # print(reverseBits(21))
 
+
 def countingBits(n):
     res = [] * n + 1
-    for i in range(n+1):
-        
-        count = list(bin(i)[2::]).count('1')
+    for i in range(n + 1):
+
+        count = list(bin(i)[2::]).count("1")
         res.append(count)
     return res
 
+
 # print(countingBits(4))
+
 
 def hammingWeight(n):
     res = 0
@@ -699,7 +707,9 @@ def hammingWeight(n):
         res += 1
     return res
 
+
 # print(hammingWeight(11))
+
 
 def singleNumber(nums):
     res = 0
@@ -711,58 +721,63 @@ def singleNumber(nums):
 def digitize(n):
     return [int(x) for x in str(n)[::-1]]
 
+
 # print(digitize(3541))
 
+
 def hoop_count(n):
-     return "Great, now move on to tricks" if n>=10 else "Keep at it until you get it"
+    return "Great, now move on to tricks" if n >= 10 else "Keep at it until you get it"
+
 
 # print(hoop_count(0))
 
 
 def reverse_words(text):
     # newString = text.split(' ')
-    
+
     # for x in range(len(newString)):
     #     reverse = ''
-        
+
     #     for y in range(len(newString[x]), 0, -1):
     #         reverse = reverse + (newString[x][y-1])
     #     newString[x] = reverse
     # return ' '.join(newString)
-    return ' '.join(t[::-1] for t in text.split(' '))
+    return " ".join(t[::-1] for t in text.split(" "))
+
 
 # print(reverse_words('tesT this Example'))
 
+
 def disemvowel(string_):
-    return ''.join(c for c in string_ if c.lower() not in "aeiou")
+    return "".join(c for c in string_ if c.lower() not in "aeiou")
     vowels = ["A", "E", "I", "O", "U"]
-    res = ''
-    
+    res = ""
+
     for x in string_:
         if x.upper() not in vowels:
             res += x
-    
+
     return res
+
 
 # print(disemvowel("First fixed test"))
 
+
 def correct(t):
-    hashSet = {
-        '5': "S",
-        '0': "O",
-        '1': "I"
-    }
+    hashSet = {"5": "S", "0": "O", "1": "I"}
 
     s = list(t)
-    
+
     for x in range(len(s)):
         if s[x] in hashSet:
             s[x] = hashSet[s[x]]
         else:
             continue
-    return ''.join(s)
+    return "".join(s)
+
 
 # print(correct('L0ND0N'))
+
 
 def stray(arr):
     count = {}
@@ -773,7 +788,10 @@ def stray(arr):
     for n, c in count.items():
         l[c] = n
     return l[1]
+
+
 # print(stray([1, 1, 2]))
+
 
 def expandedForm(num):
     s = str(num)
@@ -781,11 +799,14 @@ def expandedForm(num):
     res = []
     for i, x in enumerate(s):
         if int(x) > 0:
-            e = '0'* (l - (i + 1))
-            res.append(f'{x}{e}')
-    
-    return (' + '.join(res))
+            e = "0" * (l - (i + 1))
+            res.append(f"{x}{e}")
+
+    return " + ".join(res)
+
+
 # print(expandedForm(70305))
+
 
 def remove_char(s):
     return s[1:-1]
@@ -793,27 +814,32 @@ def remove_char(s):
 
 # print(remove_char('test'))
 
+
 def sum_str(a, b):
     return str(int(a or 0) + int(b or 0))
+
 
 # print(sum_str("", '2'))
 
 
-def other_angle(a,b):
-    return (180 - a - b)
+def other_angle(a, b):
+    return 180 - a - b
+
 
 def human_years_cat_years_dog_years(human_years):
-    res = [human_years,0,0]
-    if (human_years == 1):
+    res = [human_years, 0, 0]
+    if human_years == 1:
         res[1] = res[2] = 15
-    if (human_years == 2):
+    if human_years == 2:
         res[1] = res[2] = 9 + 15
-    if (human_years > 2):
-        res[1] = 9 + 15  + ((human_years - 2) * 4)
-        res[2] = 9 + 15  + ((human_years - 2) * 5)
+    if human_years > 2:
+        res[1] = 9 + 15 + ((human_years - 2) * 4)
+        res[2] = 9 + 15 + ((human_years - 2) * 5)
     return res
 
+
 # print(human_years_cat_years_dog_years(10))
+
 
 def divisors(n):
     # count = 0
@@ -825,12 +851,13 @@ def divisors(n):
     # if (int(math.sqrt(n)) ** 2 == n):
     #     count -= 1
     # return count
-    return sum([True if n%i == 0 else False for i in range(1, n + 1)])
+    return sum([True if n % i == 0 else False for i in range(1, n + 1)])
 
 
 # print(divisors(4))
 
-def delete_nth(order,max_e):
+
+def delete_nth(order, max_e):
     hashSet = {}
     res = []
     for e in order:
@@ -839,7 +866,9 @@ def delete_nth(order,max_e):
             res.append(e)
     return res
 
+
 # print(delete_nth([1,2,3,1,2,1,2,3], 2))
+
 
 def tribonacci(signature, n):
     if n >= 3:
@@ -855,7 +884,9 @@ def tribonacci(signature, n):
             res.append(signature[i])
         return res
 
+
 # print(tribonacci([1, 2, 3], 2))
+
 
 def find_smallest_int(arr):
     smallest = arr[0]
@@ -866,30 +897,36 @@ def find_smallest_int(arr):
     return smallest
 
     # return min(arr)
+
+
 # print(find_smallest_int([1,2,3]))
+
 
 def first_non_consecutive(arr):
     for i in range(1, len(arr)):
-        if arr[i] != arr[i-1] + 1:
+        if arr[i] != arr[i - 1] + 1:
             return arr[i]
     return None
 
+
 # print(first_non_consecutive([1,2,3,4]))
 
+
 def reverse_list(l):
-    return [l[i-1] for i in range(len(l), 0, -1)]
-         
+    return [l[i - 1] for i in range(len(l), 0, -1)]
 
 
 # print(reverse_list([1,2,3,4]))
+
 
 def nb_year(p0, percent, aug, p):
     yr = 0
     pop = p0
     while pop < p:
-        pop = math.floor(pop + ((pop * (percent * .01)) + aug))
+        pop = math.floor(pop + ((pop * (percent * 0.01)) + aug))
         yr += 1
     return yr
+
 
 # print(nb_year(1000, 2.0, 50, 1214))
 
@@ -897,38 +934,46 @@ def nb_year(p0, percent, aug, p):
 def tower_builder(n_floors):
     res = []
     for x in range(0, n_floors):
-        res.append(f'{" "*(n_floors - x - 1)}{"*" * ((x * 2) + 1)}{" "*(n_floors - x- 1)}')
+        res.append(
+            f'{" "*(n_floors - x - 1)}{"*" * ((x * 2) + 1)}{" "*(n_floors - x- 1)}'
+        )
         # res.append(f"{" "*(n_floors - x)}{res[x-1] + "**"}{" "*(n_floors - x)}")
     return res
 
+
 # print(tower_builder(3))
+
 
 def count_smileys(arr):
     count = 0
     for face in arr:
         eyes = False
         nose = True
-        validN = ['~', "-"]
-        validM = [')', "D"]
+        validN = ["~", "-"]
+        validM = [")", "D"]
         for x in face:
             if not eyes:
                 if x == ";" or x == ":":
                     eyes = True
-            elif nose: 
+            elif nose:
                 if x not in validM and x not in validN:
                     nose = False
                 elif x in validM:
                     count += 1
-                    
+
     return count
 
+
 # print(count_smileys([':-D', ';(', ';D', ':oD', ':o(', ';o(', ':-D', ';-(', ';oD', ':(', ':D', ';o(', ';-(', ';-D', ';D']))
+
 
 def update_light(current):
     lights = ["green", "yellow", "red", "green"]
     return lights[lights.index(current) + 1]
 
+
 # print(update_light("yellow"))
+
 
 def expression_matter(a, b, c):
     return max(
@@ -940,18 +985,22 @@ def expression_matter(a, b, c):
         a * (b + c),
     )
 
+
 # print(expression_matter(3, 3, 3))
 
-def between(a,b):
-    return [x for x in range(a, b+1)]
+
+def between(a, b):
+    return [x for x in range(a, b + 1)]
+
 
 # print(between(1,3))
+
 
 def sort_array(source_array):
     indexes = []
     odds = []
     for idx, el in enumerate(source_array):
-        if el%2 != 0:
+        if el % 2 != 0:
             indexes.append(idx)
             odds.append(el)
     odds.sort()
@@ -959,7 +1008,9 @@ def sort_array(source_array):
         source_array[indexes[x]] = odds[x]
     return source_array
 
+
 # print(sort_array([]))
+
 
 def small_enough(array, limit):
     for x in array:
@@ -967,75 +1018,88 @@ def small_enough(array, limit):
             return False
     return True
 
+
 # print(small_enough([66, 101] ,200))
+
 
 def gimme(input_array):
     return input_array.index(sorted(input_array)[1])
 
-    
+
 # print(gimme([15,10,14]))
 
+
 def pipe_fix(nums):
-    return [x for x in range(min(nums), max(nums)+1)]
+    return [x for x in range(min(nums), max(nums) + 1)]
+
 
 # print(pipe_fix([1, 2, 3, 12]))
 
+
 def decrypt(encrypted_text, n):
     def decryptOnce(encrypted_text):
-        odd = ''
-        even = ''
+        odd = ""
+        even = ""
         for idx, el in enumerate(encrypted_text):
-            if idx % 2: #if odd
+            if idx % 2:  # if odd
                 odd += el
             else:
                 even += el
         return odd + even
+
     res = encrypted_text
     for x in range(n):
         res = decryptOnce(res)
     return res
+
 
 # print(decrypt("012345", 2))
 
 
 def encrypt(text, n):
     def encryptOnce(encrypted_text):
-        mid = ''
-        if len(encrypted_text)%2: #if odd
-            mid = encrypted_text[math.floor(len(f'{encrypted_text}')/2)]
+        mid = ""
+        if len(encrypted_text) % 2:  # if odd
+            mid = encrypted_text[math.floor(len(f"{encrypted_text}") / 2)]
             listText = list(encrypted_text)
-            listText.pop(math.floor(len(f'{encrypted_text}')/2))
-            encrypted_text = ''.join(listText)
-        num = ''
-        for x in range(math.floor(len(f'{encrypted_text}')/2)):
+            listText.pop(math.floor(len(f"{encrypted_text}") / 2))
+            encrypted_text = "".join(listText)
+        num = ""
+        for x in range(math.floor(len(f"{encrypted_text}") / 2)):
             if not mid:
-                num += encrypted_text[math.floor(len(f'{encrypted_text}')/2) + x]
+                num += encrypted_text[math.floor(len(f"{encrypted_text}") / 2) + x]
                 num += encrypted_text[x]
             else:
                 num += encrypted_text[x]
-                num += encrypted_text[math.floor(len(f'{encrypted_text}')/2) + x]
-        return (mid + num)
+                num += encrypted_text[math.floor(len(f"{encrypted_text}") / 2) + x]
+        return mid + num
+
     for x in range(n):
         text = encryptOnce(text)
     return text
 
+
 # print(encrypt(decrypt("01234", 2), 2))
 
+
 def is_palindrome(s):
-    return s.lower() == ''.join(list(s.lower())[::-1])
-    
+    return s.lower() == "".join(list(s.lower())[::-1])
+
 
 # print(is_palindrome("rAcecar"))
 
+
 def remove(s):
     if s:
-        if (s[-1] == "!"):
+        if s[-1] == "!":
             return s[:-1]
         else:
             return s
     return s
-    
+
+
 # print(remove(""))
+
 
 def factorial(n):
     if n < 0 or n > 12:
@@ -1045,38 +1109,61 @@ def factorial(n):
         res = res * x
     return res
 
+
 # print(factorial(3))
+
 
 def persistence(n):
     count = 0
     while n >= 10:
         multi = 1
-        for x in f'{n}':
+        for x in f"{n}":
             multi = multi * int(x)
         n = multi
         count += 1
     return count
 
+
 # print(persistence(25))
+
 
 def bin_to_decimal(inp):
     return int(inp, 2)
+
 
 # print(bin_to_decimal('101010'))
 
 geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"]
 
+
 def goose_filter(birds):
-    return [bird for bird in birds if bird not in geese ]
+    return [bird for bird in birds if bird not in geese]
+
 
 # print(goose_filter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]))
 
+
 def reverse_letter(st):
-    res = ''
+    res = ""
     for letter in st:
         test = letter.isalpha()
         if test:
             res = letter + res
     return res
 
+
 # print(reverse_letter('ultr53o?n'))
+
+
+def breakCamelCase(s):
+    res = ""
+    for letter in s:
+        isUpper = letter.isupper()
+        if isUpper:
+            res = res + " " + letter
+        else:
+            res = res + letter
+    return res
+
+
+print(breakCamelCase("helloWorld"))
