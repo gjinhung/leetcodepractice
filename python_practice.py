@@ -1156,14 +1156,16 @@ def reverse_letter(st):
 
 
 def breakCamelCase(s):
-    res = ""
-    for letter in s:
-        isUpper = letter.isupper()
-        if isUpper:
-            res = res + " " + letter
-        else:
-            res = res + letter
-    return res
+    # res = ""
+    # for letter in s:
+    #     isUpper = letter.isupper()
+    #     if isUpper:
+    #         res = res + " " + letter
+    #     else:
+    #         res = res + letter
+    # return res
+
+    return "".join([f" {x}" if x.isupper() else f"{x}" for x in s])
 
 
 print(breakCamelCase("helloWorld"))
