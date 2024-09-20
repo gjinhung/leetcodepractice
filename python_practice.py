@@ -1179,4 +1179,12 @@ def shortcut(s):
     return "".join([f"{x}" if x not in ["a", "e", "i", "o", "u"] else "" for x in s])
 
 
-print(shortcut("hello"))
+# print(shortcut("hello"))
+
+
+def chromosome_check(s):
+    return (
+        "Congratulations! You're going to have a son"
+        if s[1] is "Y"
+        else "Congratulations! You're going to have a daugther"
+    )
