@@ -1188,3 +1188,10 @@ def chromosome_check(s):
         if s[1] is "Y"
         else "Congratulations! You're going to have a daugther"
     )
+
+
+def string_to_array(s):
+    return s.split(" ")
+
+
+print(string_to_array("this is hello"))
