@@ -1185,7 +1185,7 @@ def shortcut(s):
 def chromosome_check(s):
     return (
         "Congratulations! You're going to have a son"
-        if s[1] is "Y"
+        if s[1] == "Y"
         else "Congratulations! You're going to have a daugther"
     )
 
@@ -1194,4 +1194,11 @@ def string_to_array(s):
     return s.split(" ")
 
 
-print(string_to_array("this is hello"))
+# print(string_to_array("this is hello"))
+
+
+def maps(a):
+    return [x * 2 for x in a]
+
+
+print(maps([1, 2, 3]))
