@@ -1168,4 +1168,15 @@ def breakCamelCase(s):
     return "".join([f" {x}" if x.isupper() else f"{x}" for x in s])
 
 
-print(breakCamelCase("helloWorld"))
+# print(breakCamelCase("helloWorld"))
+
+
+def shortcut(s):
+    # vowels = ['a','e','i','o','u']
+    # for x in s:
+    #     if x in vowels:
+
+    return "".join([f"{x}" if x not in ["a", "e", "i", "o", "u"] else "" for x in s])
+
+
+print(shortcut("hello"))
