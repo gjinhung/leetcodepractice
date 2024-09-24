@@ -1201,4 +1201,11 @@ def maps(a):
     return [x * 2 for x in a]
 
 
-print(maps([1, 2, 3]))
+# print(maps([1, 2, 3]))
+
+
+def getConcatenation(nums):
+    return nums + nums
+
+
+print(getConcatenation([1, 2, 1]))
