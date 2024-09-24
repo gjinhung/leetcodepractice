@@ -1208,4 +1208,17 @@ def getConcatenation(nums):
     return nums + nums
 
 
-print(getConcatenation([1, 2, 1]))
+# print(getConcatenation([1, 2, 1]))
+
+
+def replaceElements(arr):
+    res = []
+    while len(arr) > 1:
+        arr.pop(0)
+        res.append(max(arr))
+
+    res.append(-1)
+    return res
+
+
+print(replaceElements([17, 18, 5, 4, 6, 1]))
