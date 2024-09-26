@@ -1212,11 +1212,22 @@ def getConcatenation(nums):
 
 
 def replaceElements(arr):
-    res = []
-    while len(arr) > 1:
-        arr.pop(0)
-        res.append(max(arr))
+    # res = []
+    # while len(arr) > 1:
+    #     arr.pop(0)
+    #     res.append(max(arr))
 
+    # res.append(-1)
+    # return res
+
+    max = arr[-1]
+    res = []
+    for el in range(len(arr) - 1, 0, -1):
+        if arr[el] < max:
+            res.insert(0, max)
+        else:
+            max = arr[el]
+            res.insert(0, max)
     res.append(-1)
     return res
 
