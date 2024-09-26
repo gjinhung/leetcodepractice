@@ -1245,4 +1245,18 @@ def capitals(word):
     return [idx for idx, letter in enumerate(word) if letter.isupper()]
 
 
-print(capitals("CodEWaRs"))
+# print(capitals("CodEWaRs"))
+
+
+def is_isogram(string):
+    hashSet = {}
+
+    for letter in string.lower():
+        if letter not in hashSet:
+            hashSet[letter] = 1
+        else:
+            return False
+    return True
+
+
+print(is_isogram("HelLo"))
