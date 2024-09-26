@@ -1232,4 +1232,17 @@ def replaceElements(arr):
     return res
 
 
-print(replaceElements([17, 18, 5, 4, 6, 1]))
+# print(replaceElements([17, 18, 5, 4, 6, 1]))
+
+
+def capitals(word):
+    # res = []
+    # for idx, letter in enumerate(word):
+    #     if letter.isupper():
+    #         res.append(idx)
+    # return res
+
+    return [idx for idx, letter in enumerate(word) if letter.isupper()]
+
+
+print(capitals("CodEWaRs"))
