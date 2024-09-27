@@ -1276,18 +1276,28 @@ def isSubsequence(s, t):
     #     else:
     #         curCount = hashSet[letter]
     # return True
+
+    # currentIdx = 0
+    # listT = list(t)
+    # for letter in s:
+    #     if letter not in listT:
+    #         return False
+    #     idx = listT.index(letter)
+    #     if idx < currentIdx:
+    #         return False
+    #     else:
+    #         currentIdx = idx
+    #         listT.pop(idx)
+    # return True
+    if s == "":
+        return True
     currentIdx = 0
-    listT = list(t)
-    for letter in s:
-        if letter not in listT:
-            return False
-        idx = listT.index(letter)
-        if idx < currentIdx:
-            return False
-        else:
-            currentIdx = idx
-            listT.pop(idx)
-    return True
+    for letter in t:
+        if letter is s[currentIdx]:
+            currentIdx += 1
+        if currentIdx == len(s):
+            return True
+    return False
 
 
 print(isSubsequence("ab", "baab"))
