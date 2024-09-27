@@ -1259,4 +1259,35 @@ def is_isogram(string):
     return True
 
 
-print(is_isogram("HelLo"))
+# print(is_isogram("HelLo"))
+
+
+def isSubsequence(s, t):
+    # hashSet = {}
+    # curCount = 0
+    # for idx, letter in enumerate(t):
+    #     hashSet[idx] = letter
+    # for letter in list(s):
+    #     print(letter)
+    #     if letter not in hashSet:
+    #         return False
+    #     elif hashSet[letter] < curCount:
+    #         return False
+    #     else:
+    #         curCount = hashSet[letter]
+    # return True
+    currentIdx = 0
+    listT = list(t)
+    for letter in s:
+        if letter not in listT:
+            return False
+        idx = listT.index(letter)
+        if idx < currentIdx:
+            return False
+        else:
+            currentIdx = idx
+            listT.pop(idx)
+    return True
+
+
+print(isSubsequence("ab", "baab"))
