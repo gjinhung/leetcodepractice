@@ -1326,4 +1326,11 @@ def positive_sum(arr):
     return sum([num if num > 0 else 0 for num in arr])
 
 
-print(positive_sum([1, -2, 3, 4, 5]))
+# print(positive_sum([1, -2, 3, 4, 5]))
+
+
+def combat(health, damage):
+    return health - damage if health - damage >= 0 else 0
+
+
+print(combat(20, 0))
