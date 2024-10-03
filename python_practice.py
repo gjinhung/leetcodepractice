@@ -1304,13 +1304,13 @@ def isSubsequence(s, t):
 
 
 def add_length(str):
-    res = []
-    strList = str.split(" ")
-    for word in strList:
-        res.append(f"{word} {len(word)}")
-    return res
+    # res = []
+    # strList = str.split(" ")
+    # for word in strList:
+    #     res.append(f"{word} {len(word)}")
+    # return res
 
-    # return [f"{word} {len(word)}" for word in str.split(" ")]
+    return [f"{word} {len(word)}" for word in str.split(" ")]
 
 
 print(add_length("hello there"))
