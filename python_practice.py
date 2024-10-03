@@ -1317,11 +1317,13 @@ def add_length(str):
 
 
 def positive_sum(arr):
-    res = []
-    for num in arr:
-        if num > 0:
-            res.append(num)
-    return sum(res)
+    # res = []
+    # for num in arr:
+    #     if num > 0:
+    #         res.append(num)
+    # return sum(res)
+
+    return sum([num if num > 0 else 0 for num in arr])
 
 
-print(positive_sum([]))
+print(positive_sum([1, -2, 3, 4, 5]))
