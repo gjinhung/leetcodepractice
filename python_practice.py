@@ -1313,4 +1313,15 @@ def add_length(str):
     return [f"{word} {len(word)}" for word in str.split(" ")]
 
 
-print(add_length("hello there"))
+# print(add_length("hello there"))
+
+
+def positive_sum(arr):
+    res = []
+    for num in arr:
+        if num > 0:
+            res.append(num)
+    return sum(res)
+
+
+print(positive_sum([]))
