@@ -1333,4 +1333,28 @@ def combat(health, damage):
     return health - damage if health - damage >= 0 else 0
 
 
-print(combat(20, 0))
+# print(combat(20, 0))
+
+
+def is_anagram(test, original):
+    hashSet = {}
+
+    for letter in test.lower():
+        if letter in hashSet:
+            hashSet[letter] += 1
+        else:
+            hashSet[letter] = 1
+
+    for letter in original.lower():
+        if letter in hashSet:
+            hashSet[letter] -= 1
+            if hashSet[letter] == 0:
+                del hashSet[letter]
+        else:
+            return False
+    if hashSet.keys():
+        return False
+    return True
+
+
+print(is_anagram("foefet", "toffee"))
