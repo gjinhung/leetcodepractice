@@ -1361,32 +1361,44 @@ def is_anagram(test, original):
 
 
 def dir_reduc(arr):
-    hashSet = {}
-    res = []
-    for dir in arr:
-        if dir not in hashSet:
-            hashSet[dir] = 1
+    val = {"NORTH": 1, "SOUTH": -1, "EAST": 2, "WEST": -2}
+    if not len(arr):
+        return []
+    res = [val[arr[0]]]
+    for idx in range(1, len(arr)):
+        print(f"beginning res {res}")
+        dir = arr[idx]
+        if not len(res):
+            res.append(val[dir])
+            print("append first")
         else:
-            hashSet[dir] += 1
+            if res[-1] + val[dir] == 0:
+                res.pop()
+                print("remove last")
+                print(f"remove res {res}")
+            else:
+                res.append(val[dir])
+                print("append end")
 
-    northSouth = hashSet["NORTH"] - hashSet["SOUTH"]
-    eastWest = hashSet["WEST"] - hashSet["EAST"]
-
-    if northSouth > 0:
-        for x in range(northSouth):
-            res.append("NORTH")
-    else:
-        for x in range(-northSouth):
-            res.append("SOUTH")
-
-    if eastWest > 0:
-        for x in range(eastWest):
-            res.append("WEST")
-    else:
-        for x in range(-eastWest):
-            res.append("EAST")
-
+    unVal = {1: "NORTH", -1: "SOUTH", 2: "EAST", -2: "WEST"}
+    for idx, num in enumerate(res):
+        res[idx] = unVal[num]
     return res
 
 
-print(dir_reduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]))
+print(
+    dir_reduc(
+        [
+            "EAST",
+            "EAST",
+            "WEST",
+            "NORTH",
+            "WEST",
+            "EAST",
+            "EAST",
+            "SOUTH",
+            "NORTH",
+            "WEST",
+        ]
+    )
+)
