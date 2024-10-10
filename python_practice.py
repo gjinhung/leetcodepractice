@@ -1357,4 +1357,36 @@ def is_anagram(test, original):
     return True
 
 
-print(is_anagram("foefet", "toffee"))
+# print(is_anagram("foefet", "toffee"))
+
+
+def dir_reduc(arr):
+    hashSet = {}
+    res = []
+    for dir in arr:
+        if dir not in hashSet:
+            hashSet[dir] = 1
+        else:
+            hashSet[dir] += 1
+
+    northSouth = hashSet["NORTH"] - hashSet["SOUTH"]
+    eastWest = hashSet["WEST"] - hashSet["EAST"]
+
+    if northSouth > 0:
+        for x in range(northSouth):
+            res.append("NORTH")
+    else:
+        for x in range(-northSouth):
+            res.append("SOUTH")
+
+    if eastWest > 0:
+        for x in range(eastWest):
+            res.append("WEST")
+    else:
+        for x in range(-eastWest):
+            res.append("EAST")
+
+    return res
+
+
+print(dir_reduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]))
