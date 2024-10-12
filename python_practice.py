@@ -1412,14 +1412,22 @@ def duty_free(price, discount, holiday_cost):
 
 
 def merge_arrays(arr1, arr2):
-    list = arr1 + arr2
-    list.sort()
-    res = [list[0]]
-    for num in range(1, len(list)):
-        if list[num] != list[num - 1]:
-            res.append(list[num])
-
-    return res
+    return sorted(set(arr1 + arr2))
 
 
-print(merge_arrays([1, 3, 5, 7, 9], [1, 4, 10, 8, 6, 4, 2]))
+# print(merge_arrays([1, 3, 5, 7, 9], [1, 4, 10, 8, 6, 4, 2]))
+
+
+def check_exam(arr1, arr2):
+    res = 0
+    for idx in range(len(arr1)):
+        if arr2[idx] != "":
+            if arr2[idx] != arr1[idx]:
+                res -= 1
+            else:
+                res += 4
+
+    return res if res >= 0 else 0
+
+
+print(check_exam(["b", "c", "b", "a"], ["", "a", "a", "c"]))
