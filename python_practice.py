@@ -1386,19 +1386,26 @@ def dir_reduc(arr):
     return res
 
 
-print(
-    dir_reduc(
-        [
-            "EAST",
-            "EAST",
-            "WEST",
-            "NORTH",
-            "WEST",
-            "EAST",
-            "EAST",
-            "SOUTH",
-            "NORTH",
-            "WEST",
-        ]
-    )
-)
+# print(
+#     dir_reduc(
+#         [
+#             "EAST",
+#             "EAST",
+#             "WEST",
+#             "NORTH",
+#             "WEST",
+#             "EAST",
+#             "EAST",
+#             "SOUTH",
+#             "NORTH",
+#             "WEST",
+#         ]
+#     )
+# )
+
+
+def duty_free(price, discount, holiday_cost):
+    return math.ceil(holiday_cost / (price * (discount * 0.01)))
+
+
+print(duty_free(12, 50, 1000))
