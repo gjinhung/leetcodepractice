@@ -1430,4 +1430,21 @@ def check_exam(arr1, arr2):
     return res if res >= 0 else 0
 
 
-print(check_exam(["b", "c", "b", "a"], ["", "a", "a", "c"]))
+# print(check_exam(["b", "c", "b", "a"], ["", "a", "a", "c"]))
+
+
+def increment_string(strng):
+    numIdx = 0
+    for idx in range(len(strng)):
+        if strng[idx].isnumeric() and strng[idx] != "0":
+            numIdx = idx
+            break
+    if numIdx:
+        number = strng[numIdx::]
+        string = strng[:numIdx]
+        return f"{string}{int(number) + 1}"
+
+    return f"{strng}1"
+
+
+print(increment_string("foo012"))
