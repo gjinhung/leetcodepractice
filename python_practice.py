@@ -1408,4 +1408,18 @@ def duty_free(price, discount, holiday_cost):
     return math.ceil(holiday_cost / (price * (discount * 0.01)))
 
 
-print(duty_free(12, 50, 1000))
+# print(duty_free(12, 50, 1000))
+
+
+def merge_arrays(arr1, arr2):
+    list = arr1 + arr2
+    list.sort()
+    res = [list[0]]
+    for num in range(1, len(list)):
+        if list[num] != list[num - 1]:
+            res.append(list[num])
+
+    return res
+
+
+print(merge_arrays([1, 3, 5, 7, 9], [1, 4, 10, 8, 6, 4, 2]))
