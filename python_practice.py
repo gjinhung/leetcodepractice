@@ -1434,17 +1434,19 @@ def check_exam(arr1, arr2):
 
 
 def increment_string(strng):
-    numIdx = 0
-    for idx in range(len(strng)):
-        if strng[idx].isnumeric() and strng[idx] != "0":
-            numIdx = idx
+    numIdx = None
+    for idx in range(len(strng) - 1, 0, -1):
+        if not strng[idx].isnumeric():
+            numIdx = idx + 1
             break
-    if numIdx:
+    if numIdx and numIdx < len(strng):
         number = strng[numIdx::]
         string = strng[:numIdx]
-        return f"{string}{int(number) + 1}"
+        lenDif = len(number) - len(f"{int(number) + 1}")
+        zeros = "0" * lenDif
+        return f"{string}{zeros}{int(number) + 1}"
 
     return f"{strng}1"
 
 
-print(increment_string("foo012"))
+print(increment_string("1"))
