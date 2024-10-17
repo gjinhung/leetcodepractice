@@ -1503,4 +1503,26 @@ def square(n):
     return n**2
 
 
-print(square(50))
+# print(square(50))
+import datetime
+
+
+def check_coupon(entered_code, correct_code, current_date, expiration_date):
+    # dt = datetime(current_date)
+    return current_date
+
+
+# print(check_coupon("123", "123", "September 5, 2014", "October 1, 2014"))
+
+
+def enough(cap, on, wait):
+    space = cap - on - wait
+    if space > -1:
+        return 0
+    else:
+        return -space
+
+
+print(enough(10, 5, 5))
+print(enough(100, 60, 50))
+print(enough(20, 5, 5))
