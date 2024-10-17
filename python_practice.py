@@ -1523,6 +1523,23 @@ def enough(cap, on, wait):
         return -space
 
 
-print(enough(10, 5, 5))
-print(enough(100, 60, 50))
-print(enough(20, 5, 5))
+# print(enough(10, 5, 5))
+# print(enough(100, 60, 50))
+# print(enough(20, 5, 5))
+
+
+def capitalize(s):
+    even = ""
+    odd = ""
+    for idx, el in enumerate(s):
+        if idx % 2 > 0:  # odd
+            even = even + el.upper()
+            odd = odd + el.lower()
+        else:
+            even = even + el.lower()
+            odd = odd + el.upper()
+
+    return [even, odd]
+
+
+print(capitalize("hello"))
