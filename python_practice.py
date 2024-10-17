@@ -1434,19 +1434,33 @@ def check_exam(arr1, arr2):
 
 
 def increment_string(strng):
-    numIdx = None
-    for idx in range(len(strng) - 1, 0, -1):
-        if not strng[idx].isnumeric():
-            numIdx = idx + 1
-            break
-    if numIdx and numIdx < len(strng):
-        number = strng[numIdx::]
-        string = strng[:numIdx]
-        lenDif = len(number) - len(f"{int(number) + 1}")
-        zeros = "0" * lenDif
-        return f"{string}{zeros}{int(number) + 1}"
+    stripped = strng.rstrip("1234567890")
+    ints = strng[len(stripped) :]
 
-    return f"{strng}1"
+    if len(ints) == 0:
+        return strng + "1"
+    else:
+        length = len(ints)
+
+        new_ints = 1 + int(ints)
+
+        # pad new_ints with zeroes on the left
+        new_ints = str(new_ints).zfill(length)
+
+        return stripped + new_ints
+    # numIdx = None
+    # for idx in range(len(strng) - 1, 0, -1):
+    #     if not strng[idx].isnumeric():
+    #         numIdx = idx + 1
+    #         break
+    # if numIdx and numIdx < len(strng):
+    #     number = strng[numIdx::]
+    #     string = strng[:numIdx]
+    #     lenDif = len(number) - len(f"{int(number) + 1}")
+    #     zeros = "0" * lenDif
+    #     return f"{string}{zeros}{int(number) + 1}"
+
+    # return f"{strng}1"
 
 
-print(increment_string("1"))
+print(increment_string("foo001"))
