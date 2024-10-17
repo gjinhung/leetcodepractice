@@ -1468,9 +1468,24 @@ def increment_string(strng):
 
 def rain_amount(mm):
     if mm < 40:
-        return f"You need to give your plant {40 - mm} mm of water"
+        return f"You need to give your plant {40 - mm}mm of water"
     else:
         return "Your plant has had more than enough water for today!"
 
 
-print(rain_amount(39))
+# print(rain_amount(39))
+
+
+def feast(beast, dish):
+    # first = beast[0] == dish[0]
+    # last = beast[-1] == dish[-1]
+    # if first and last:
+    #     return True
+    # else:
+    #     return False
+
+    return True if beast[0] == dish[0] and beast[-1] == dish[-1] else False
+
+
+print(feast("brown bear", "bear claw"))
+print(feast("great blue heron", "garlic naan"))
