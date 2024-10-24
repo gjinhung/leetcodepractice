@@ -1550,3 +1550,21 @@ def say_hello(name, city, state):
 
 
 # print(say_hello(["John", "Smith"], "Phoenix", "Arizona"))
+
+
+def find_it(seq):
+    even = []
+    odd = []
+    for int in seq:
+        if int in odd:
+            even.append(int)
+            odd.remove(int)
+        elif int in even:
+            odd.append(int)
+            even.remove(int)
+        else:
+            odd.append(int)
+    return odd[0]
+
+
+print(find_it([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]))
