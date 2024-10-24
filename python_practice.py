@@ -1567,4 +1567,31 @@ def find_it(seq):
     return odd[0]
 
 
-print(find_it([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]))
+# print(find_it([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]))
+
+
+def stock_list(list_of_art, list_of_cat):
+    hash = {}
+    for cat in list_of_cat:
+        hash[cat] = 0
+    for art in list_of_art:
+        letter = art.split(" ")[0][0]
+        num = int(art.split(" ")[1])
+        if letter in list_of_cat:
+            hash[letter] += num
+
+    values = list(hash.values())
+    res = []
+    for idx, cat in enumerate(list_of_cat):
+        res.append(f"({cat} : {values[idx]})")
+    return (" - ").join(res)
+
+
+# "(A : 0) - (B : 1290) - (C : 515) - (D : 600)"
+
+print(
+    stock_list(
+        ["ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"],
+        ["A", "B"],
+    )
+)
