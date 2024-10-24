@@ -1589,9 +1589,29 @@ def stock_list(list_of_art, list_of_cat):
 
 # "(A : 0) - (B : 1290) - (C : 515) - (D : 600)"
 
-print(
-    stock_list(
-        ["ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"],
-        ["A", "B"],
-    )
-)
+# print(
+#     stock_list(
+#         ["ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"],
+#         ["A", "B"],
+#     )
+# )
+
+
+def whatday(num):
+    days = [
+        "",
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+    ]
+    if num < 8 and num > 0:
+        return days[num]
+    else:
+        return "Wrong, please enter a number between 1 and 7"
+
+
+print(whatday(9))
