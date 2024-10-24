@@ -1539,7 +1539,14 @@ def capitalize(s):
             even = even + el.lower()
             odd = odd + el.upper()
 
-    return [even, odd]
+    return [odd, even]
 
 
-print(capitalize("hello"))
+# print(capitalize("hello"))
+
+
+def say_hello(name, city, state):
+    return f"Hello, {name[0]} {name[1]}! Welcome to {city}, {state}"
+
+
+print(say_hello(["John", "Smith"], "Phoenix", "Arizona"))
