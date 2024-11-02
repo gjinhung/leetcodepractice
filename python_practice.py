@@ -1632,11 +1632,13 @@ def sum_array(arr):
 
 
 def remove_exclamation_marks(s):
-    res = ""
-    for x in s:
-        if x != "!":
-            res += x
-    return res
+    # res = ""
+    # for x in s:
+    #     if x != "!":
+    #         res += x
+    # return res
+
+    return "".join([x for x in s if x != "!"])
 
 
 print(remove_exclamation_marks("Hello World!"))
