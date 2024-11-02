@@ -1667,8 +1667,11 @@ def high(x):
 
 
 def remove_url_anchor(url):
-    idx = url.index("#")
-    return url[:idx]
+    if "#" in url:
+        idx = url.index("#")
+        return url[:idx]
+    else:
+        return url
 
 
-print(remove_url_anchor("www.codewars.com#about"))
+print(remove_url_anchor("www.codewars.comabout"))
