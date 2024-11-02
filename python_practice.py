@@ -1614,4 +1614,18 @@ def whatday(num):
         return "Wrong, please enter a number between 1 and 7"
 
 
-print(whatday(9))
+# print(whatday(9))
+
+
+def sum_array(arr):
+    if not arr or not len(arr) or len(arr) == 1:
+        return 0
+    arr.sort()
+    arr.pop()
+    arr.pop(0)
+    if not len(arr):
+        return 0
+    return sum(arr)
+
+
+print(sum_array([6]))
