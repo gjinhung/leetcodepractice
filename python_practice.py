@@ -1641,4 +1641,26 @@ def remove_exclamation_marks(s):
     return "".join([x for x in s if x != "!"])
 
 
-print(remove_exclamation_marks("Hello World!"))
+# print(remove_exclamation_marks("Hello World!"))
+
+
+def high(x):
+    highest = 0
+    highestW = ""
+    alph = "abcdefghijklmnopqrstuvwxyz"
+    letterHash = {}
+    for idx, letter in enumerate(list(alph)):
+        letterHash[letter] = idx + 1
+    listWords = x.split(" ")
+    for word in listWords:
+        total = 0
+        for letter in word:
+            total += letterHash[letter]
+        if total > highest:
+            highest = total
+            highestW = word
+
+    return highestW
+
+
+print(high("man i need a taxi up to ubud"))
