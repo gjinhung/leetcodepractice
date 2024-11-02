@@ -1628,4 +1628,15 @@ def sum_array(arr):
     return sum(arr)
 
 
-print(sum_array([6]))
+# print(sum_array([6]))
+
+
+def remove_exclamation_marks(s):
+    res = ""
+    for x in s:
+        if x != "!":
+            res += x
+    return res
+
+
+print(remove_exclamation_marks("Hello World!"))
