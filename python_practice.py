@@ -1663,4 +1663,12 @@ def high(x):
     return highestW
 
 
-print(high("man i need a taxi up to ubud"))
+# print(high("man i need a taxi up to ubud"))
+
+
+def remove_url_anchor(url):
+    idx = url.index("#")
+    return url[:idx]
+
+
+print(remove_url_anchor("www.codewars.com#about"))
