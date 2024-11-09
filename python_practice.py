@@ -1681,9 +1681,44 @@ def race(v1, v2, g):
     if v1 >= v2:
         return None
 
-    time_in_hours = g / (v2 - v1)
+    time_in_hours = g / (v2 - v1)  # lead / (2nd person speed - 1st person speed)
     hours = int(time_in_hours)
     minutes = int((time_in_hours - hours) * 60)
     seconds = int(((time_in_hours - hours) * 60 - minutes) * 60)
 
     return [hours, minutes, seconds]
+
+
+def mxdiflg(a1, a2):
+    if len(a1) == 0 or len(a2) == 0:
+        return -1
+    a1Arr = []
+    a2Arr = []
+    for a in a1:
+        a1Arr.append(len(a))
+    for a in a2:
+        a2Arr.append(len(a))
+    a1Max = max(a1Arr)
+    a1Min = min(a1Arr)
+    a2Max = max(a2Arr)
+    a2Min = min(a2Arr)
+    return max(a1Max - a2Min, a2Max - a1Min)
+
+
+print(
+    mxdiflg(
+        [
+            "hoqq",
+            "bbllkw",
+            "oox",
+            "ejjuyyy",
+            "plmiis",
+            "xxxzgpsssa",
+            "xxwwkktt",
+            "znnnnfqknaz",
+            "qqquuhii",
+            "dvvvwz",
+        ],
+        ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"],
+    )
+)
