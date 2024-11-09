@@ -1734,3 +1734,13 @@ def powers_of_two(n):
 def hero(bullets, dragons):
 
     return True if bullets / 2 > dragons else False
+
+def count(s):
+    hash = {}
+    for x in s:
+        if x in hash:
+            hash[x] += 1
+        else:
+            hash[x] = 1
+    # The function code should be here
+    return hash
