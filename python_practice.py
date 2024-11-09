@@ -1674,4 +1674,16 @@ def remove_url_anchor(url):
         return url
 
 
-print(remove_url_anchor("www.codewars.comabout"))
+# print(remove_url_anchor("www.codewars.comabout"))
+
+
+def race(v1, v2, g):
+    if v1 >= v2:
+        return None
+
+    time_in_hours = g / (v2 - v1)
+    hours = int(time_in_hours)
+    minutes = int((time_in_hours - hours) * 60)
+    seconds = int(((time_in_hours - hours) * 60 - minutes) * 60)
+
+    return [hours, minutes, seconds]
