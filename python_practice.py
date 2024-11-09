@@ -1705,20 +1705,27 @@ def mxdiflg(a1, a2):
     return max(a1Max - a2Min, a2Max - a1Min)
 
 
-print(
-    mxdiflg(
-        [
-            "hoqq",
-            "bbllkw",
-            "oox",
-            "ejjuyyy",
-            "plmiis",
-            "xxxzgpsssa",
-            "xxwwkktt",
-            "znnnnfqknaz",
-            "qqquuhii",
-            "dvvvwz",
-        ],
-        ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"],
-    )
-)
+# print(
+#     mxdiflg(
+#         [
+#             "hoqq",
+#             "bbllkw",
+#             "oox",
+#             "ejjuyyy",
+#             "plmiis",
+#             "xxxzgpsssa",
+#             "xxwwkktt",
+#             "znnnnfqknaz",
+#             "qqquuhii",
+#             "dvvvwz",
+#         ],
+#         ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"],
+#     )
+# )
+
+
+def powers_of_two(n):
+    return [2**x for x in range(n + 1)]
+
+
+print(powers_of_two(2))
