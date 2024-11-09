@@ -1735,6 +1735,7 @@ def hero(bullets, dragons):
 
     return True if bullets / 2 > dragons else False
 
+
 def count(s):
     hash = {}
     for x in s:
@@ -1742,5 +1743,19 @@ def count(s):
             hash[x] += 1
         else:
             hash[x] = 1
-    # The function code should be here
     return hash
+
+
+def to_alternating_case(string):
+    res = ""
+
+    for letter in string:
+        if letter.isalpha():  # is it a letter?
+            if letter.isupper():
+                res += letter.lower()
+            else:
+                res += letter.upper()
+
+        else:
+            res += letter
+    return res
