@@ -1803,29 +1803,44 @@ def list_squared(m, n):
 
 
 def find_even_index(arr):
-    leftIdx = 0
-    left = arr[leftIdx]
-    rightIdx = len(arr) - 1
-    right = arr[rightIdx]
+    # leftIdx = 0
+    # left = arr[leftIdx]
+    # rightIdx = len(arr) - 1
+    # right = arr[rightIdx]
 
-    while leftIdx is not rightIdx:
-        if rightIdx == -1:
-            return -1
-        if left >= right:
-            right = right + arr[rightIdx - 1]
-            rightIdx -= 1
-            # print(f"{leftIdx} - {rightIdx}")
+    # while leftIdx is not rightIdx:
+    #     if rightIdx == -1:
+    #         return -1
+    #     if left >= right:
+    #         right = right + arr[rightIdx - 1]
+    #         rightIdx -= 1
+    #         # print(f"{leftIdx} - {rightIdx}")
 
-        if right > left:
-            # if not arr[leftIdx + 1]:
-            #     return -1
-            left = left + arr[leftIdx + 1]
-            leftIdx += 1
+    #     if right > left:
+    #         # if not arr[leftIdx + 1]:
+    #         #     return -1
+    #         left = left + arr[leftIdx + 1]
+    #         leftIdx += 1
 
-    # print(left)
-    # print(right)
-    return leftIdx
+    # # print(left)
+    # # print(right)
+    # return leftIdx\
+    left = 0
+    right = sum(arr[1:])
+    # print(len(arr))
+    for idx in range(len(arr)):
+        if idx == 0:
+            left = 0
+        else:
+            left = sum(arr[:idx])
+        if idx == len(arr) - 1:
+            right = 0
+        else:
+            right = sum(arr[idx + 1 :])
+        if left == right:
+            return idx
+    return -1
 
 
-# print(find_even_index(list(range(1, 100))))
-print(find_even_index([101, 100, 50, -51, 1, 1]))
+print(find_even_index([0, 8]))
+# print(find_even_index([1, 100, 50, -51, 1, 1]))
