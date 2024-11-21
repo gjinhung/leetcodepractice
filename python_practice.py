@@ -1827,7 +1827,6 @@ def find_even_index(arr):
     # return leftIdx\
     left = 0
     right = sum(arr[1:])
-    # print(len(arr))
     for idx in range(len(arr)):
         if idx == 0:
             left = 0
@@ -1842,5 +1841,17 @@ def find_even_index(arr):
     return -1
 
 
-print(find_even_index([0, 8]))
+# print(find_even_index([0, 8]))
 # print(find_even_index([1, 100, 50, -51, 1, 1]))
+
+
+def queue_time(customers, n):
+    queue = [0] * n
+    for x in range(len(customers)):
+        shortest = queue.index(min(queue))
+        queue[shortest] += customers[x]
+
+    return max(queue)
+
+
+print(queue_time([1, 2, 3, 4, 5], 100))
