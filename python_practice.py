@@ -1854,4 +1854,14 @@ def queue_time(customers, n):
     return max(queue)
 
 
-print(queue_time([1, 2, 3, 4, 5], 100))
+# print(queue_time([1, 2, 3, 4, 5], 100))
+
+
+def find_short(s):
+    l = s.split(" ")
+    for idx, word in enumerate(l):
+        l[idx] = len(word)
+    return min(l)
+
+
+print(find_short("bitcoin take over the world maybe who knows perhaps"))
