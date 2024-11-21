@@ -1784,7 +1784,7 @@ def list_squared(m, n):
     return res
 
 
-print(list_squared(1, 250))
+# print(list_squared(1, 250))
 
 
 def list_squared(m, n):
@@ -1800,3 +1800,32 @@ def list_squared(m, n):
         if sr - math.floor(sr) == 0:
             result.append([num, total])
     return result
+
+
+def find_even_index(arr):
+    leftIdx = 0
+    left = arr[leftIdx]
+    rightIdx = len(arr) - 1
+    right = arr[rightIdx]
+
+    while leftIdx is not rightIdx:
+        if rightIdx == -1:
+            return -1
+        if left >= right:
+            right = right + arr[rightIdx - 1]
+            rightIdx -= 1
+            # print(f"{leftIdx} - {rightIdx}")
+
+        if right > left:
+            # if not arr[leftIdx + 1]:
+            #     return -1
+            left = left + arr[leftIdx + 1]
+            leftIdx += 1
+
+    # print(left)
+    # print(right)
+    return leftIdx
+
+
+# print(find_even_index(list(range(1, 100))))
+print(find_even_index([101, 100, 50, -51, 1, 1]))
