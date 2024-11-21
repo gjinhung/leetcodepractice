@@ -1759,3 +1759,29 @@ def to_alternating_case(string):
         else:
             res += letter
     return res
+
+
+def list_squared_pre(n):
+    res = []
+    for x in range(1, n + 1):
+
+        if n % x == 0:
+            res.append(x * x)
+
+    total = sum(res)
+    sqrt = math.sqrt(total)
+    if sqrt == int(sqrt):
+        return math.sqrt(total)
+    return False
+
+
+def list_squared(m, n):
+    res = []
+    for x in range(m, n + 1):
+        sqrt = list_squared_pre(x)
+        if sqrt:
+            res.append([x, int(sqrt) * int(sqrt)])
+    return res
+
+
+print(list_squared(1, 250))
