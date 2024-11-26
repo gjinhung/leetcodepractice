@@ -1874,4 +1874,17 @@ def two_sum(numbers, target):
             return (idx, numbers.index(target - numbers[idx]))
 
 
-print(two_sum([2, 2, 3], 4))
+# print(two_sum([2, 2, 3], 4))
+
+
+def sum_mul(n, m):
+    res = 0
+    if n == m or m < n:
+        return "INVALID"
+    else:
+        for number in range(0, m, n):
+            res += number
+    return res
+
+
+# print(sum_mul(2, 9))
