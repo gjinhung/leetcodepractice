@@ -1864,4 +1864,14 @@ def find_short(s):
     return min(l)
 
 
-print(find_short("bitcoin take over the world maybe who knows perhaps"))
+# print(find_short("bitcoin take over the world maybe who knows perhaps"))
+
+
+def two_sum(numbers, target):
+    for index in range(len(numbers), 0, -1):
+        idx = index - 1
+        if target - numbers[idx] in numbers[:idx]:
+            return (idx, numbers.index(target - numbers[idx]))
+
+
+print(two_sum([2, 2, 3], 4))
