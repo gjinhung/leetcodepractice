@@ -1893,11 +1893,26 @@ def sum_mul(n, m):
 def distinct(seq):
     res = []
     sortedSeq = sorted(seq)
-    print(sortedSeq)
     for num in sortedSeq:
         if num not in res:
             res.append(num)
     return res
 
 
-print(distinct([1, 2, 2, 3, 3, 4, 4, 7, 5, 6, 7, 7, 7]))
+# print(distinct([1, 2, 2, 3, 3, 4, 4, 7, 5, 6, 7, 7, 7]))
+
+
+def sort_by_length(arr):
+    return sorted(arr, key=len)
+    # res = []
+    # hash = {}
+    # for letter in arr:
+    #     hash[len(letter)] = letter
+
+    # sortH = sorted(hash.keys())
+    # for h in sortH:
+    #     res.append(hash[h])
+    # return res
+
+
+print(sort_by_length(["Telescopes", "Glasses", "Eyes", "Monocles"]))
