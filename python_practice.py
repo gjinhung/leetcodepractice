@@ -1888,3 +1888,16 @@ def sum_mul(n, m):
 
 
 # print(sum_mul(2, 9))
+
+
+def distinct(seq):
+    res = []
+    sortedSeq = sorted(seq)
+    print(sortedSeq)
+    for num in sortedSeq:
+        if num not in res:
+            res.append(num)
+    return res
+
+
+print(distinct([1, 2, 2, 3, 3, 4, 4, 7, 5, 6, 7, 7, 7]))
