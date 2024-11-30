@@ -264,6 +264,8 @@ def invert(lst):
     for x in lst:
         res.append(eval(f"{-1}{'*'}{x}"))
     return res
+    
+    return [eval(f"{-1}{'*'}{x}") for x in lst]
 
 
 # print(invert([1, 2, 3, 4, 5]))
