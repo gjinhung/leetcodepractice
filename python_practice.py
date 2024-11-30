@@ -1918,3 +1918,9 @@ def sort_by_length(arr):
 
 
 print(sort_by_length(["Telescopes", "Glasses", "Eyes", "Monocles"]))
+
+def share_price(invested, changes):
+    total = invested
+    for c in changes:
+        total = total + (total * (c * .01))
+    return "{:.2f}".format(round(total, 2))
