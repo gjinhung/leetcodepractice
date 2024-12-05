@@ -264,7 +264,7 @@ def invert(lst):
     for x in lst:
         res.append(eval(f"{-1}{'*'}{x}"))
     return res
-    
+
     return [eval(f"{-1}{'*'}{x}") for x in lst]
 
 
@@ -1917,10 +1917,18 @@ def sort_by_length(arr):
     # return res
 
 
-print(sort_by_length(["Telescopes", "Glasses", "Eyes", "Monocles"]))
+# print(sort_by_length(["Telescopes", "Glasses", "Eyes", "Monocles"]))
+
 
 def share_price(invested, changes):
     total = invested
     for c in changes:
-        total = total + (total * (c * .01))
+        total = total + (total * (c * 0.01))
     return "{:.2f}".format(round(total, 2))
+
+
+def multiplication_table(size):
+    return [[n * num for n in range(1, size + 1)] for num in range(1, size + 1)]
+
+
+print(multiplication_table(0))
