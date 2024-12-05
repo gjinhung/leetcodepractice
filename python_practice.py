@@ -1931,4 +1931,23 @@ def multiplication_table(size):
     return [[n * num for n in range(1, size + 1)] for num in range(1, size + 1)]
 
 
-print(multiplication_table(0))
+# print(multiplication_table(0))
+
+
+def sum_pairs(ints, s):
+    res = []
+    rIdx = len(ints)
+    for idx, el in enumerate(ints):
+        if (s - el) in ints[idx:]:
+            indexes = [i for i, x in enumerate(ints) if x == (s - el)]
+            if rIdx > indexes[-1] and (idx != indexes[-1]):
+                rIdx = indexes[-1]
+                res = [el, s - el]
+    if res:
+        return res
+    else:
+        return None
+
+
+print(sum_pairs([1, 2, 3, 4, 1, 0], 2))
+print(sum_pairs([10, 5, 2, 3, 7, 5], 10))
