@@ -1943,4 +1943,15 @@ def sum_pairs(ints, s):
 
 
 # print(sum_pairs([1, 2, 3, 4, 1, 0], 2))
-print(sum_pairs([10, 5, 2, 3, 7, 5], 10))
+# print(sum_pairs([10, 5, 2, 3, 7, 5], 10))
+
+
+def number(bus_stops):
+    total = 0
+    for pair in bus_stops:
+        diff = pair[0] - pair[1]
+        total += diff
+    return total
+
+
+print(number([[10, 0], [3, 5], [5, 8]]))
