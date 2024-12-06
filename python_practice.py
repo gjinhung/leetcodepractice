@@ -1956,10 +1956,20 @@ def number(bus_stops):
 
 # print(number([[10, 0], [3, 5], [5, 8]]))
 
-def get_size(w,h,d):
+
+def get_size(w, h, d):
     area = 2 * ((w * h) + (w * d) + (h * d))
     volume = w * h * d
     return [area, volume]
 
 
+class Ball(object):
+    def __init__(self, type="regular"):
+        self.ball_type = type
 
+
+# print(Ball().ball_type)
+
+
+def better_than_average(class_points, your_points):
+    return your_points > sum(class_points) / len(class_points)
