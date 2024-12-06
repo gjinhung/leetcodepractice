@@ -1954,4 +1954,12 @@ def number(bus_stops):
     return total
 
 
-print(number([[10, 0], [3, 5], [5, 8]]))
+# print(number([[10, 0], [3, 5], [5, 8]]))
+
+def get_size(w,h,d):
+    area = 2 * ((w * h) + (w * d) + (h * d))
+    volume = w * h * d
+    return [area, volume]
+
+
+
