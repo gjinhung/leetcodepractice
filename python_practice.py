@@ -1992,7 +1992,7 @@ def check_for_factor(base, factor):
 
 def longest_consec(strarr, k):
     if len(strarr) == 0 or k > len(strarr) or k <= 0:
-        return ''
+        return ""
     lengths = []
     for word in strarr:
         lengths.append(len(word))
@@ -2007,15 +2007,19 @@ def longest_consec(strarr, k):
     return longestW
 
 
-print(
-    longest_consec(
-        [
-            "ejjjjmmtthh",
-            "zxxuueeg",
-            "aanlljrrrxx",
-            "dqqqaaabbb",
-            "oocccffuucccjjjkkkjyyyeehh",
-        ],
-        0,
-    )
-)
+# print(
+#     longest_consec(
+#         [
+#             "ejjjjmmtthh",
+#             "zxxuueeg",
+#             "aanlljrrrxx",
+#             "dqqqaaabbb",
+#             "oocccffuucccjjjkkkjyyyeehh",
+#         ],
+#         0,
+#     )
+# )
+
+
+def hex_to_dec(s):
+    return int(s, 16)
