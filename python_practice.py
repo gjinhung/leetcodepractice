@@ -1984,3 +1984,7 @@ def get_real_floor(n):
         return n - 1
     else:
         return n
+
+
+def check_for_factor(base, factor):
+    return base % factor == 0
