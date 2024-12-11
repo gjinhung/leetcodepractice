@@ -1988,3 +1988,34 @@ def get_real_floor(n):
 
 def check_for_factor(base, factor):
     return base % factor == 0
+
+
+def longest_consec(strarr, k):
+    if len(strarr) == 0 or k > len(strarr) or k <= 0:
+        return ''
+    lengths = []
+    for word in strarr:
+        lengths.append(len(word))
+    longestLength = 0
+    longestW = ""
+    print(lengths)
+    for x in range(0, len(strarr)):
+        print(x)
+        if sum(lengths[x : x + k]) > longestLength:
+            longestLength = sum(lengths[x : x + k])
+            longestW = "".join(strarr[x : x + k])
+    return longestW
+
+
+print(
+    longest_consec(
+        [
+            "ejjjjmmtthh",
+            "zxxuueeg",
+            "aanlljrrrxx",
+            "dqqqaaabbb",
+            "oocccffuucccjjjkkkjyyyeehh",
+        ],
+        0,
+    )
+)
