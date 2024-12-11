@@ -1973,3 +1973,14 @@ class Ball(object):
 
 def better_than_average(class_points, your_points):
     return your_points > sum(class_points) / len(class_points)
+
+
+def get_real_floor(n):
+    if n == 15:
+        return 13
+    elif n > 13:
+        return n - 2
+    elif n >= 1:
+        return n - 1
+    else:
+        return n
