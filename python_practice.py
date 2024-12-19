@@ -2071,4 +2071,23 @@ def rev_rot(strng, sz):
 
 # If the sum of a chunk's digits is divisible by 2, reverse that chunk; otherwise rotate it to the left by one position.
 # 33047 91089 28157
-print(rev_rot("733049910872815764", 5))
+# print(rev_rot("733049910872815764", 5))
+
+
+def no_boring_zeros(n):
+    stringN = list(f"{n}")
+    if n == 0:
+        return 0
+    trigger = True
+    for el in range(len(stringN), 0, -1):
+        if trigger:
+            if stringN[el - 1] == "0":
+                stringN[el - 1] = ""
+            else:
+                trigger = False
+    return int("".join(stringN))
+
+
+print(no_boring_zeros(2016))
+print(no_boring_zeros(-100))
+print(no_boring_zeros(0))
