@@ -2102,4 +2102,15 @@ def apple(x):
     # Your job is simple, if x squared is more than 1000, return It's hotter than the sun!!, else, return Help yourself to a honeycomb Yorkie for the glovebox.
 
 
-print(apple("50"))
+# print(apple("50"))
+
+def words_to_marks(s):
+    alphabet = list('abcdefghijklmnopqrstuvwxyz')
+    hash = {}
+    sum = 0
+    for idx, letter in enumerate(alphabet):
+        hash[letter] = idx + 1
+    for letter in list(s):
+        sum += hash[letter]
+
+    return sum
