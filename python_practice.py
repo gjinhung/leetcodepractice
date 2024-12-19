@@ -2104,8 +2104,9 @@ def apple(x):
 
 # print(apple("50"))
 
+
 def words_to_marks(s):
-    alphabet = list('abcdefghijklmnopqrstuvwxyz')
+    alphabet = list("abcdefghijklmnopqrstuvwxyz")
     hash = {}
     sum = 0
     for idx, letter in enumerate(alphabet):
@@ -2114,3 +2115,15 @@ def words_to_marks(s):
         sum += hash[letter]
 
     return sum
+
+
+def problem(a):
+    if isinstance(a, str):
+        return("Error")
+    else:
+        return (a* 50) + 6
+
+
+print(problem("happy"))
+
+#Make a function that returns the value multiplied by 50 and increased by 6. If the value entered is a string it should return "Error".
