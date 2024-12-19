@@ -2039,9 +2039,36 @@ def predict_age(age_1, age_2, age_3, age_4, age_5, age_6, age_7, age_8):
     return int(square / 2)
 
 
-print(predict_age(65, 60, 75, 55, 60, 63, 64, 45))
+# print(predict_age(65, 60, 75, 55, 60, 63, 64, 45))
 # Take a list of ages when each of your great-grandparent died.
 # Multiply each number by itself.
 # Add them all together.
 # Take the square root of the result.
 # Divide by two.
+
+
+def rev_rot(strng, sz):
+    if sz <= 0 or str == "":
+        return ""
+    subString = []
+    for x in range(0, len(strng), sz):
+        if len(strng[x : x + sz]) == sz:
+            subString.append(strng[x : x + sz])
+    for idx, el in enumerate(subString):
+        listedEl = list(el)
+        intList = map(int, listedEl)
+        if not sum(intList) % 2:
+            subString[idx] = ("").join(listedEl[::-1])
+        else:
+            first = listedEl[0]
+            new = []
+            for x in range(1, len(listedEl)):
+                new.append(el[x])
+            new.append(first)
+            subString[idx] = ("").join(new)
+    return ("").join(subString)
+
+
+# If the sum of a chunk's digits is divisible by 2, reverse that chunk; otherwise rotate it to the left by one position.
+# 33047 91089 28157
+print(rev_rot("733049910872815764", 5))
