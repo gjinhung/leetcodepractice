@@ -2130,11 +2130,11 @@ def problem(a):
 
 
 def containsDuplicate(nums):
-    while len(nums):
-        num = nums[0]
-        nums.remove(num)
-        if num in nums:
+    seen = set()
+    for num in nums:
+        if num in seen:
             return True
+        seen.add(num)
     return False
 
 
