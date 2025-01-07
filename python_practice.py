@@ -2235,3 +2235,18 @@ def isAnagram(s, t):
 def sum_two_smallest_numbers(numbers):
     numbers.sort()
     return numbers[0] + numbers[1]
+
+
+def calculate_years(principal, interest, tax, desired):
+    years = 0
+    bank = principal
+    while bank < desired:
+        years += 1
+        newInterest = bank * interest
+        newTax = newInterest * tax
+        bank = bank + newInterest - newTax
+        print(bank)
+    return years
+
+
+print(calculate_years(1000, 0.05, 0.18, 1100))
