@@ -2229,4 +2229,9 @@ def isAnagram(s, t):
         return False
 
 
-print(isAnagram("anagram", "nagaream"))
+# print(isAnagram("anagram", "nagaream"))
+
+
+def sum_two_smallest_numbers(numbers):
+    numbers.sort()
+    return numbers[0] + numbers[1]
