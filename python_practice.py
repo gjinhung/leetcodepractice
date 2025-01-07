@@ -2119,11 +2119,91 @@ def words_to_marks(s):
 
 def problem(a):
     if isinstance(a, str):
-        return("Error")
+        return "Error"
     else:
-        return (a* 50) + 6
+        return (a * 50) + 6
 
 
-print(problem("happy"))
+# print(problem("happy"))
 
-#Make a function that returns the value multiplied by 50 and increased by 6. If the value entered is a string it should return "Error".
+# Make a function that returns the value multiplied by 50 and increased by 6. If the value entered is a string it should return "Error".
+
+
+def containsDuplicate(nums):
+    while len(nums):
+        num = nums[0]
+        nums.remove(num)
+        if num in nums:
+            return True
+    return False
+
+
+print(
+    containsDuplicate(
+        [
+            274,
+            -735,
+            -911,
+            80,
+            454,
+            -511,
+            922,
+            -775,
+            985,
+            -669,
+            -463,
+            -896,
+            -629,
+            -586,
+            910,
+            -361,
+            288,
+            -375,
+            88,
+            556,
+            -578,
+            -406,
+            -87,
+            25,
+            377,
+            -635,
+            -445,
+            -289,
+            646,
+            -962,
+            -487,
+            -924,
+            -968,
+            -962,
+            502,
+            36,
+            129,
+            -611,
+            54,
+            -27,
+            -496,
+            915,
+            -84,
+            -782,
+            349,
+            678,
+            332,
+            -114,
+            345,
+            14,
+            119,
+            710,
+            821,
+            -194,
+            988,
+            38,
+            -369,
+            409,
+            -559,
+            -529,
+            -298,
+            -593,
+            705,
+        ]
+    )
+)
