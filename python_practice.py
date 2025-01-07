@@ -2137,8 +2137,7 @@ def containsDuplicate(nums):
         seen.add(num)
     return False
 
-
-print(
+    # print(
     containsDuplicate(
         [
             274,
@@ -2206,4 +2205,28 @@ print(
             705,
         ]
     )
-)
+
+
+# )
+
+
+def isAnagram(s, t):
+    hashSet1 = {}
+    hashSet2 = {}
+    for l in s:
+        if l in hashSet1:
+            hashSet1[l] += 1
+        else:
+            hashSet1[l] = 1
+    for l in t:
+        if l in hashSet2:
+            hashSet2[l] += 1
+        else:
+            hashSet2[l] = 1
+    if hashSet1 == hashSet2:
+        return True
+    else:
+        return False
+
+
+print(isAnagram("anagram", "nagaream"))
