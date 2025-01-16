@@ -2293,4 +2293,17 @@ def no_odds(values):
     return [x for x in values if not x % 2]
 
 
-print(no_odds([1, 2, 3, 4, 5, 6, 7]))
+# print(no_odds([1, 2, 3, 4, 5, 6, 7]))
+
+
+def sum_digits(number):
+    total = 0
+    string = f"{number}"
+    for number in string:
+        if number.isnumeric():
+            total += int(number)
+
+    return total
+
+
+print(sum_digits(10))
