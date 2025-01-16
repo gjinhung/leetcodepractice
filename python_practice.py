@@ -2279,4 +2279,11 @@ def string_clean(s):
     return "".join(res)
 
 
-print(string_clean("This looks5 grea8t!"))
+# print(string_clean("This looks5 grea8t!"))
+
+
+def derive(coefficient, exponent):
+    return f'{coefficient * exponent}^{exponent - 1}'
+
+
+print(derive(2, 3))
