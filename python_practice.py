@@ -2250,6 +2250,7 @@ def calculate_years(principal, interest, tax, desired):
 
 # print(calculate_years(1000, 0.05, 0.18, 1100))
 
+
 def people_with_age_drink(age):
     if age < 14:
         return "drink toddy"
@@ -2258,8 +2259,7 @@ def people_with_age_drink(age):
     elif age < 21:
         return "drink beer"
     else:
-        return 'drink whisky'
-
+        return "drink whisky"
 
 
 # print(people_with_age_drink(13))
@@ -2267,3 +2267,16 @@ def people_with_age_drink(age):
 # print(people_with_age_drink(18))
 # print(people_with_age_drink(20))
 # print(people_with_age_drink(30))
+
+
+def string_clean(s):
+    listS = list(s)
+    res = []
+    for letter in listS:
+        x = letter.isnumeric()
+        if not x:
+            res.append(letter)
+    return "".join(res)
+
+
+print(string_clean("This looks5 grea8t!"))
