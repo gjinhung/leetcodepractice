@@ -2283,7 +2283,14 @@ def string_clean(s):
 
 
 def derive(coefficient, exponent):
-    return f'{coefficient * exponent}^{exponent - 1}'
+    return f"{coefficient * exponent}^{exponent - 1}"
 
 
-print(derive(2, 3))
+# print(derive(2, 3))
+
+
+def no_odds(values):
+    return [x for x in values if not x % 2]
+
+
+print(no_odds([1, 2, 3, 4, 5, 6, 7]))
