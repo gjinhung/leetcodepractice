@@ -2245,8 +2245,25 @@ def calculate_years(principal, interest, tax, desired):
         newInterest = bank * interest
         newTax = newInterest * tax
         bank = bank + newInterest - newTax
-        print(bank)
     return years
 
 
-print(calculate_years(1000, 0.05, 0.18, 1100))
+# print(calculate_years(1000, 0.05, 0.18, 1100))
+
+def people_with_age_drink(age):
+    if age < 14:
+        return "drink toddy"
+    elif age < 18:
+        return "drink coke"
+    elif age < 21:
+        return "drink beer"
+    else:
+        return 'drink whisky'
+
+
+
+# print(people_with_age_drink(13))
+# print(people_with_age_drink(17))
+# print(people_with_age_drink(18))
+# print(people_with_age_drink(20))
+# print(people_with_age_drink(30))
