@@ -2315,4 +2315,13 @@ def round_to_next5(n):
     return n
 
 
-print(round_to_next5(9))
+# print(round_to_next5(9))
+
+
+def name_shuffler(str_):
+    split = str_.split(" ")
+    return ' '.join([split[1], split[0]])
+
+
+
+print(name_shuffler('gar hung'))
