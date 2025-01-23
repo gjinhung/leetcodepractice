@@ -2322,5 +2322,29 @@ def name_shuffler(str_):
     split = str_.split(" ")
     return ' '.join([split[1], split[0]])
 
-def main (verb, noun)
+def main (verb, noun):
     return f'{verb} {noun}'
+
+def meeting(s):
+    res = ''
+    capS = s.upper().split(";")
+    hashSet = {}
+    for name in capS:
+        splitN = name.split(':')
+        if splitN[1] in hashSet.keys():
+            hashSet[splitN[1]].append(splitN[0])
+        else:
+            hashSet[splitN[1]] = [splitN[0]]
+    keys = list(hashSet.keys())
+    keys.sort()
+    for last in keys:
+        lastS = hashSet[last]
+        lastS.sort()
+        for first in lastS:
+            res += f'({last}, {first})'
+
+
+    return (res)
+
+s = "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"
+print(meeting(s))
