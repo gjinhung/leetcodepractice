@@ -2347,4 +2347,13 @@ def meeting(s):
     return (res)
 
 s = "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"
-print(meeting(s))
+# print(meeting(s))
+
+def multi_table(number):
+    res = []
+    for x in range(1, 11):
+        res.append(f'{x} * {number} = {x * number}')
+    
+    return '\n'.join(res)
+
+# print(multi_table(9))
