@@ -2298,12 +2298,21 @@ def no_odds(values):
 
 def sum_digits(number):
     total = 0
-    string = f"{number}"
-    for number in string:
+    for number in f"{number}":
         if number.isnumeric():
             total += int(number)
 
     return total
 
 
-print(sum_digits(10))
+# print(sum_digits(10))
+
+
+def round_to_next5(n):
+
+    while n % 5:
+        n += 1
+    return n
+
+
+print(round_to_next5(9))
